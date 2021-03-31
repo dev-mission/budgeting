@@ -2,9 +2,12 @@
   Chuck Lui
   Rene Ramirez 
   Disheng Wang
+
+## introduction
+
 This repository contains a "starter" project for web application development in JavaScript.
 
-## One-time Setup asdqweasd
+## One-time Setup 
 
 1. On Github, "Fork" this git repo to your own account so that you have your own copy.
 
