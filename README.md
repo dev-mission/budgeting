@@ -1,5 +1,5 @@
-# Full-Stack Starter
-
+# Bulga
+  Chuck Lui
 This repository contains a "starter" project for web application development in JavaScript.
 
 ## One-time Setup
