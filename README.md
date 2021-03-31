@@ -2,8 +2,14 @@
   Chuck Lui
   Rene Ramirez 
   Disheng Wang
+
+## introduction
+  This Bulga app is a budgetting app that help people track thier spendings.
+
 This repository contains a "starter" project for web application development in JavaScript.
-w
+
+## One-time Setup 
+
 1. On Github, "Fork" this git repo to your own account so that you have your own copy.
 
    Read more about "forking" here:  
