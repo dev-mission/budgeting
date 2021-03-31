@@ -1,6 +1,6 @@
 # Bulga
   Chuck Lui
-  Rene Ramirez
+  Rene Ramirez 
 
 This repository contains a "starter" project for web application development in JavaScript.
 
