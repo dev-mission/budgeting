@@ -3,9 +3,7 @@
   Rene Ramirez 
   Disheng Wang
 This repository contains a "starter" project for web application development in JavaScript.
-
-## One-time Setup
-
+w
 1. On Github, "Fork" this git repo to your own account so that you have your own copy.
 
    Read more about "forking" here:  
