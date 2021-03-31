@@ -1,6 +1,7 @@
 # Bulga
   Chuck Lui
   Rene Ramirez 
+  Disheng Wang
 This repository contains a "starter" project for web application development in JavaScript.
 
 ## One-time Setup
