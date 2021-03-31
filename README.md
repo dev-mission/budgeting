@@ -4,6 +4,7 @@
   Disheng Wang
 
 ## introduction
+  This Bulga app is a budgetting app that help people track thier spendings.
 
 This repository contains a "starter" project for web application development in JavaScript.
 
