@@ -1,4 +1,5 @@
-# Full-Stack Starter
+Demere Smith 
+
 
 This repository contains a "starter" project for web application development in JavaScript.
 
