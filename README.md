@@ -1,12 +1,11 @@
 # Bulga
   Chuck Lui
+  Demere Smith 
   Rene Ramirez 
   Disheng Wang
 
 ## introduction
   This Bulga app is a budgetting app that help people track thier spendings. It also have an optional saving goal that can help young adults to get the laptop.
-
-This repository contains a "starter" project for web application development in JavaScript.
 
 ## One-time Setup 
 
