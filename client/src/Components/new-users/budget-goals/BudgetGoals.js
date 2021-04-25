@@ -24,7 +24,11 @@ const BudgetGoals = () => {
                     <label for="goalDate">When do you want to buy it?</label>
                     <input type="date" name="goalDate" id="goalDate" />
                 </div>
-                
+                <div>
+                    <button type="add">+</button>
+                    <button type="submit">Submit</button>
+                </div>
+
             </div>
             
         </div>
