@@ -46,7 +46,7 @@ const Api = {
   },
   budget: {
     add(amount) {
-      return instance.post("/api/budget/add", amount);
+      return instance.post("/api/budget/budgetgoals", amount);
     },
     retrieve(month) {
       return instance.get("/api/budget/overview", month);

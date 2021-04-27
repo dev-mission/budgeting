@@ -12,7 +12,8 @@ import Home from './Home';
 import Login from './Login';
 import Passwords from './Passwords';
 import Register from './Register';
-
+import WelcomePage from './Components/new-users/welcome/WelcomePage'; //ADDED
+import BudgetGoals from './Components/new-users/budget-goals/BudgetGoals'; //ADDED
 function App() {
   return (
     <AuthContextProvider>
@@ -33,6 +34,12 @@ function App() {
               <Register />
             </Route>
           )}
+          <Route path="/welcome">
+            <WelcomePage />
+          </Route>
+          <Route path="/budgetgoals">
+            <BudgetGoals />
+          </Route>
         </Switch>
       </Router>
     </AuthContextProvider>

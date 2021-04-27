@@ -19,7 +19,7 @@ router.get('/overview', interceptors.requireLogin, async function(req, res, next
   }
 });
 
-router.post('/add', function(req, res, next) {
+router.post('/budgetgoals', function(req, res, next) {
     const row = models.Budget.build(req.body)
     try {
         await row.save();
