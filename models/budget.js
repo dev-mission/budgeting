@@ -14,10 +14,10 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Budget.init({
-    UserId: DataTypes.INTEGER,
     dollarAmount: DataTypes.DECIMAL,
-    timeBegin: DataTypes.DATE,
-    timeEnd: DataTypes.DATE
+    UserId: DataTypes.INTEGER,
+    year: DataTypes.INTEGER,
+    month: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Budget',
