@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import Api from "../../../Api";
 
-const BudgetGoals = () => {
+const BudgetGoalsForm = () => {
   const [budget, setBudget] = useState("");
-  const [goalForm, setGoalForm] = useState({
+  const [goalObject, setGoalObject] = useState({
     goalName: "",
     goalCost: "",
     goalDate: "",
   });
+  const [goalForm, setGoalForm] = useState([]);
   const [hasSubmit, setHasSubmit] = useState(false);
   const history = useHistory();
   const { id } = useParams();
@@ -20,13 +21,13 @@ const BudgetGoals = () => {
         setBudget(value);
         break;
       case "goalName":
-        setGoalForm({ ...goalForm, [name]: value });
+        setGoalObject({ ...goalObject, [name]: value });
         break;
       case "goalCost":
-        setGoalForm({ ...goalForm, [name]: value });
+        setGoalObject({ ...goalObject, [name]: value });
         break;
       case "goalDate":
-        setGoalForm({ ...goalForm, [name]: value });
+        setGoalObject({ ...goalObject, [name]: value });
         break;
       default:
         return 0;
@@ -34,22 +35,23 @@ const BudgetGoals = () => {
   };
 
   const handleAdd = (e) => {
-    setGoalForm({ goalName: "", goalCost: "", goalDate: "" });
+    setGoalForm([...goalForm, goalObject]);
+    setGoalObject({ goalName: "", goalCost: "", goalDate: "" });
   };
 
   const onSubmit = async (e) => {
     e.preventDefault();
     setHasSubmit(true);
-    try {
-      if (id) {
-        await Api.budget.update(id, budget);
-      } else {
-        await Api.budget.add(budget);
-      }
-      history.push("/budgetgoals");
-    } catch (error) {
-      console.log(error);
-    }
+    //     try {
+    //       if (id) {
+    //         await Api.budget.update(id, budget);
+    //       } else {
+    //         await Api.budget.add(budget);
+    //       }
+    //       history.push("/budgetgoals");
+    //     } catch (error) {
+    //       console.log(error);
+    //     }
   };
 
   return (
@@ -78,7 +80,7 @@ const BudgetGoals = () => {
               type="text"
               name="goalName"
               id="goalName"
-              value={goalForm.goalName}
+              value={goalObject.goalName}
               onChange={onChange}
             />
           </div>
@@ -88,7 +90,7 @@ const BudgetGoals = () => {
               type="number"
               name="goalCost"
               id="goalCost"
-              value={goalForm.goalCost}
+              value={goalObject.goalCost}
               onChange={onChange}
             />
           </div>
@@ -98,13 +100,13 @@ const BudgetGoals = () => {
               type="date"
               name="goalDate"
               id="goalDate"
-              value={goalForm.goalDate}
+              value={goalObject.goalDate}
               onChange={onChange}
             />
           </div>
           <div>
             <button type="add" onClick={handleAdd}>
-              +
+              + add goal
             </button>
             <button type="submit">Submit</button>
           </div>
@@ -115,4 +117,4 @@ const BudgetGoals = () => {
   );
 };
 
-export default BudgetGoals;
+export default BudgetGoalsForm;
