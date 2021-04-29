@@ -8,17 +8,17 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      UserId: {
-        type: Sequelize.INTEGER
-      },
       dollarAmount: {
         type: Sequelize.DECIMAL
       },
-      timeBegin: {
-        type: Sequelize.DATE
+      UserId: {
+        type: Sequelize.INTEGER
       },
-      timeEnd: {
-        type: Sequelize.DATE
+      year: {
+        type: Sequelize.INTEGER
+      },
+      month: {
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,

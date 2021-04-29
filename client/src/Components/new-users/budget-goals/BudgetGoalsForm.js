@@ -42,16 +42,13 @@ const BudgetGoalsForm = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     setHasSubmit(true);
-    //     try {
-    //       if (id) {
-    //         await Api.budget.update(id, budget);
-    //       } else {
-    //         await Api.budget.add(budget);
-    //       }
-    //       history.push("/budgetgoals");
-    //     } catch (error) {
-    //       console.log(error);
-    //     }
+    try {
+      await Api.budget.add(budget);
+      history.push("/budgetgoals");
+      console.log("123");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

@@ -9,8 +9,8 @@ const helpers = require('../helpers');
 
 const router = express.Router();
 
-router.get('/overview', interceptors.requireLogin, async function(req, res, next) {
-  const row = models.Budget.findByPk(req.params.month)
+router.get('/', interceptors.requireLogin, async function(req, res, next) {
+  const row = models.Budget.findByPk()
   if (row) {
     await row.destroy();
     res.status(HttpStatus.OK).end();
@@ -19,8 +19,8 @@ router.get('/overview', interceptors.requireLogin, async function(req, res, next
   }
 });
 
-router.post('/budgetgoals', function(req, res, next) {
-    const row = models.Budget.build(req.body)
+router.post('/', function(req, res, next) {
+    const row = models.Budget.build(req.params.amount)
     try {
         await row.save();
         res.status(201).json(row);      //save and return the new data
@@ -32,7 +32,7 @@ router.post('/budgetgoals', function(req, res, next) {
 });
 
 
-router.patch('/:id', interceptors.requireLogin, async function(req, res) { //M
+router.patch('/', interceptors.requireLogin, async function(req, res) { //M
     const row = await models.Budget.findByPk(req.params.id);
     if (row) {
       try {

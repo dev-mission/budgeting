@@ -46,13 +46,13 @@ const Api = {
   },
   budget: {
     add(amount) {
-      return instance.post("/api/budget/budgetgoals", amount);
+      return instance.post("/api/budget", amount);
     },
-    retrieve(month) {
-      return instance.get("/api/budget/overview", month);
+    get(id) {
+      return instance.get(`/api/budget/${id}`);
     },
     update(newAmount) {
-      return instance.patch("/api/budget/update", newAmount);
+      return instance.patch("/api/budget", newAmount);
     },
   },
 };

@@ -10,6 +10,7 @@ import Passwords from "./Passwords";
 import Register from "./Register";
 import WelcomePage from "./Components/new-users/welcome/WelcomePage"; //ADDED
 import BudgetGoalsContainer from "./Components/new-users/budget-goals/BudgetGoalsContainer"; //ADDED
+import Overview from "./Components/existed-user/overview/";
 
 function App() {
   return (
@@ -36,6 +37,9 @@ function App() {
           </Route>
           <Route path="/budgetgoals">
             <BudgetGoalsContainer />
+          </Route>
+          <Route path="/overview">
+            <Overview />
           </Route>
         </Switch>
       </Router>

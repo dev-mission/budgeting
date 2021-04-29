@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Api from "../../../Api";
-const BudgetGoalsList = (props) => {
+
+const Overview = () => {
   const [budget, setBudget] = useState(0);
 
   useEffect(() => {
@@ -17,4 +18,4 @@ const BudgetGoalsList = (props) => {
   );
 };
 
-export default BudgetGoalsList;
+export default Overview;
