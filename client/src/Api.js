@@ -1,8 +1,8 @@
-import axios from 'axios';
+import axios from "axios";
 
 const instance = axios.create({
   headers: {
-    Accept: 'application/json',
+    Accept: "application/json",
   },
 });
 
@@ -10,7 +10,7 @@ instance.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response.status === 401) {
-      window.location = '/login';
+      window.location = "/login";
     }
     return Promise.reject(error);
   }
@@ -19,31 +19,48 @@ instance.interceptors.response.use(
 const Api = {
   auth: {
     login(email, password) {
-      return instance.post('/api/auth/login', {email, password});
+      return instance.post("/api/auth/login", { email, password });
     },
     logout() {
-      return instance.get('/api/auth/logout');
+      return instance.get("/api/auth/logout");
     },
     register(data) {
-      return instance.post('/api/auth/register', data);
-    }
+      return instance.post("/api/auth/register", data);
+    },
   },
   passwords: {
     reset(email) {
-      return instance.post('/api/passwords', {email});
+      return instance.post("/api/passwords", { email });
     },
     get(token) {
       return instance.get(`/api/passwords/${token}`);
     },
     update(token, password) {
-      return instance.patch(`/api/passwords/${token}`, {password});
-    }
+      return instance.patch(`/api/passwords/${token}`, { password });
+    },
   },
   users: {
     me() {
-      return instance.get('/api/users/me');
-    }
-  }
+      return instance.get("/api/users/me");
+    },
+  },
+  budget: {
+    index() {
+      return instance.get("/api/budget");
+    },
+    create(data) {
+      return instance.post("/api/budget", data); //M
+    },
+    get(id) {
+      return instance.get(`/api/budget/${id}`); //M
+    },
+    update(id, data) {
+      return instance.patch(`/api/budget/${id}`, data); //M
+    },
+    delete(id) {
+      return instance.delete(`/api/budget/${id}`); //M
+    },
+  },
 };
 
 export default Api;
