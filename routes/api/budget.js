@@ -1,50 +1,47 @@
 "use strict";
 
-const HttpStatus = require("http-status-codes");
-const interceptors = require("../interceptors");
 const express = require("express");
+const HttpStatus = require("http-status-codes");
+
+const interceptors = require("../interceptors");
+const models = require("../../models");
 
 const router = express.Router();
 
-const models = require("../../models"); //M
-
 router.get("/", async function (req, res) {
-  //M
-  const row = await models.Budget.findAll();
-  res.json(row);
+  const budget = await models.Budget.findAll({
+    order: [
+      ["month", "ASC"],
+      ["dollarAmount", "ASC"],
+    ],
+  });
+  res.json(budget);
 });
 
-router.post("/", async function (req, res) {
-  //M C of CRUDE
-  const row = models.Budget.build(req.body);
+router.post("/", interceptors.requireLogin, async function (req, res) {
+  const budget = models.Budget.build(req.body);
   try {
-    await row.save();
-    res.status(201).json(row); //save and return the new data
+    await budget.save();
+    res.status(HttpStatus.CREATED).json(budget);
   } catch (error) {
-    // if not returnt the error
-    console.log(error);
-    console.log(row);
-
-    res.status(422).json(error);
+    res.status(HttpStatus.UNPROCESSABLE_ENTITY).json(error);
   }
 });
 
 router.get("/:id", async function (req, res) {
-  //M
-  const row = await models.Budget.findByPk(req.params.id);
-  if (row) {
-    res.json(row);
+  const budget = await models.Budget.findByPk(req.params.id);
+  if (budget) {
+    res.json(budget);
   } else {
     res.status(HttpStatus.NOT_FOUND).end();
   }
 });
 
 router.patch("/:id", interceptors.requireLogin, async function (req, res) {
-  //M
-  const row = await models.Budget.findByPk(req.params.id);
-  if (row) {
+  const budget = await models.Budget.findByPk(req.params.id);
+  if (budget) {
     try {
-      await row.update(req.body);
+      await budget.update(req.body);
       res.status(HttpStatus.OK).end();
     } catch (error) {
       res.status(HttpStatus.UNPROCESSABLE_ENTITY).json(error);
@@ -55,10 +52,9 @@ router.patch("/:id", interceptors.requireLogin, async function (req, res) {
 });
 
 router.delete("/:id", interceptors.requireLogin, async function (req, res) {
-  //M
-  const row = await models.Budget.findByPk(req.params.id);
-  if (row) {
-    await row.destroy();
+  const budget = await models.Budget.findByPk(req.params.id);
+  if (budget) {
+    await budget.destroy();
     res.status(HttpStatus.OK).end();
   } else {
     res.status(HttpStatus.NOT_FOUND).end();

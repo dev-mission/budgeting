@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 
-import Api from "../../Api";
+import Api from "../../../Api";
 
 const BudgetForm = () => {
   const [date, setDate] = useState(new Date());
+  const [user, setUser] = useState({});
   const [budget, setBudget] = useState({
     dollarAmount: 0.0,
-    UserId: 1211,
+    UserId: "",
     year: date.getUTCFullYear(),
     month: date.getUTCMonth() + 1,
   }); // does this has to be object??
@@ -16,18 +17,23 @@ const BudgetForm = () => {
   const { id } = useParams();
 
   useEffect(function () {
-    console.log(budget);
-    if (id) {
-      Api.budget.get(id).then((response) => setBudget(response.data));
-    }
+    Api.users.me().then((response) => setUser(response));
   }, []);
 
   const onChange = (e) => {
     const { name, value } = e.target;
     const newBudget = { ...budget };
-    newBudget[name] = parseFloat(value);
-    setBudget(newBudget);
+    if (value === "") {
+      newBudget[name] = value;
+    } else {
+      newBudget[name] = parseFloat(value);
+    }
+    setBudget({
+      ...newBudget,
+      UserId: user.data.id,
+    });
   };
+  console.log(budget);
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -36,8 +42,8 @@ const BudgetForm = () => {
         await Api.budget.update(id, budget);
       } else {
         await Api.budget.create(budget);
+        history.push("/overview");
       }
-      history.push("/overview");
     } catch (error) {
       console.log(error);
     }

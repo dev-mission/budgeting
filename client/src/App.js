@@ -9,7 +9,7 @@ import Login from "./Login";
 import Passwords from "./Passwords";
 import Register from "./Register";
 
-import BudgetForm from "./components/new-users/BudgetForm";
+import BudgetForm from "./components/new-users/budget/BudgetForm";
 import Overview from "./components/existing-user/Overview";
 
 function App() {
