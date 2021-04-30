@@ -9,6 +9,7 @@ const models = require("../../models");
 const router = express.Router();
 
 router.get("/", async function (req, res) {
+  console.log(123);
   const budget = await models.Budget.findAll({
     order: [
       ["month", "ASC"],
@@ -19,7 +20,7 @@ router.get("/", async function (req, res) {
 });
 
 router.post("/", interceptors.requireLogin, async function (req, res) {
-  const budget = models.Budgets.build(req.body);
+  const budget = models.Budget.build(req.body);
   try {
     await budget.save();
     res.status(HttpStatus.CREATED).json(budget);

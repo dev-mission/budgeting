@@ -37,7 +37,6 @@ const BudgetForm = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    console.log(budget);
     try {
       if (id) {
         await Api.budget.update(id, budget);

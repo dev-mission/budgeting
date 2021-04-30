@@ -5,9 +5,9 @@ const Overview = () => {
   const [budgetValue, setBudgetValue] = useState(0);
   useEffect(() => {
     Api.budget.index().then((response) => {
-      console.log(13, response);
+      setBudgetValue(response);
     });
-  }, []);
+  }, [budgetValue]);
 
   return <div>{budgetValue}</div>;
 };
