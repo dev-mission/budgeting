@@ -8,6 +8,7 @@ import Home from "./Home";
 import Login from "./Login";
 import Passwords from "./Passwords";
 import Register from "./Register";
+import SetUp from "./Components/NewUser/SetUp";
 
 function App() {
   return (
@@ -29,6 +30,9 @@ function App() {
               <Register />
             </Route>
           )}
+          <Route path="/setup">
+            <SetUp />
+          </Route>
         </Switch>
       </Router>
     </AuthContextProvider>
