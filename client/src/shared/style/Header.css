@@ -1,0 +1,19 @@
+.navigationColor {
+  background-color: #20c997 !important;
+}
+
+.bulgaLogoMargin {
+  margin-right: 230px;
+}
+
+.navBarPostion {
+  display: flex;
+}
+
+li {
+  padding-left: 2rem !important;
+}
+
+a {
+  color: white !important;
+}
