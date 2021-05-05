@@ -6,32 +6,33 @@ import Api from "../../../Api";
 const BudgetForm = () => {
   const [date, setDate] = useState(new Date());
   const [user, setUser] = useState({});
-  const [budget, setBudget] = useState({
-    dollarAmount: 0.0,
-    UserId: "",
-    year: date.getUTCFullYear(),
-    month: date.getUTCMonth() + 1,
-  }); // does this has to be object??
+  const [budget, setBudget] = useState([
+    {
+      dollarAmount: 0.0,
+      UserId: "",
+      year: date.getUTCFullYear(),
+      month: date.getUTCMonth() + 1,
+    },
+  ]);
 
   const history = useHistory();
   const { id } = useParams();
 
   useEffect(function () {
-    Api.users.me().then((response) => setUser(response));
+    Api.users.me().then((response) => setUser(response.data));
   }, []);
 
   const onChange = (e) => {
     const { name, value } = e.target;
-    const newBudget = { ...budget };
+    const newBudget = budget[0];
     if (value === "") {
       newBudget[name] = value;
+      newBudget["UserId"] = user.id;
     } else {
       newBudget[name] = parseFloat(value);
+      newBudget["UserId"] = user.id;
     }
-    setBudget({
-      ...newBudget,
-      UserId: user.data.id,
-    });
+    setBudget([newBudget]);
   };
   console.log(budget);
 

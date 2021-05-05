@@ -9,14 +9,7 @@ const models = require("../../models");
 const router = express.Router();
 
 router.get("/", async function (req, res) {
-  console.log(123);
-  const budget = await models.Budget.findAll({
-    order: [
-      ["month", "ASC"],
-      ["dollarAmount", "ASC"],
-    ],
-  });
-  res.json(budget);
+  res.json([{ dollarAmount: 3.33 }]);
 });
 
 router.post("/", interceptors.requireLogin, async function (req, res) {
