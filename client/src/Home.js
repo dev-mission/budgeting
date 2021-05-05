@@ -10,7 +10,9 @@ function Home() {
 
   return (
     <main className="container">
-      <h1>{budget.map((b) => b.dollarAmount)}</h1>
+      {budget.map((each) => (
+        <p>{each.dollarAmount}</p>
+      ))}
     </main>
   );
 }

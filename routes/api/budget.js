@@ -9,16 +9,19 @@ const models = require("../../models");
 const router = express.Router();
 
 router.get("/", async function (req, res) {
-  res.json([{ dollarAmount: 3.33 }]);
+  const row = await models.Budget.findAll();
+  res.json(row);
 });
 
 router.post("/", interceptors.requireLogin, async function (req, res) {
   const budget = models.Budget.build(req.body);
   try {
+    console.log(budget);
     await budget.save();
     res.status(HttpStatus.CREATED).json(budget);
   } catch (error) {
     res.status(HttpStatus.UNPROCESSABLE_ENTITY).json(error);
+    console.log(error);
   }
 });
 

@@ -6,14 +6,11 @@ import Api from "../../../Api";
 const BudgetForm = () => {
   const [date, setDate] = useState(new Date());
   const [user, setUser] = useState({});
-  const [budget, setBudget] = useState([
-    {
-      dollarAmount: 0.0,
-      UserId: "",
-      year: date.getUTCFullYear(),
-      month: date.getUTCMonth() + 1,
-    },
-  ]);
+  const [budget, setBudget] = useState({
+    dollarAmount: 0.0,
+    year: date.getUTCFullYear(),
+    month: date.getUTCMonth() + 1,
+  });
 
   const history = useHistory();
   const { id } = useParams();
@@ -24,15 +21,13 @@ const BudgetForm = () => {
 
   const onChange = (e) => {
     const { name, value } = e.target;
-    const newBudget = budget[0];
+    const newBudget = { ...budget };
     if (value === "") {
       newBudget[name] = value;
-      newBudget["UserId"] = user.id;
     } else {
       newBudget[name] = parseFloat(value);
-      newBudget["UserId"] = user.id;
     }
-    setBudget([newBudget]);
+    setBudget(newBudget);
   };
   console.log(budget);
 
