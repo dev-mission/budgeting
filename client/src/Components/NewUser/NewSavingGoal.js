@@ -1,13 +1,9 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
-import Calendar from "react-Calendar";
+import Calendar from "react-calendar";
 
 function NewSavingGoal (){
-    const [date, setDate] = useState(new Date());
-
-    const onChange = date => {
-        setDate(date);
-    };
+    const [value, onChange] = useState(new Date());
     
     return (
         <div>
@@ -28,9 +24,9 @@ function NewSavingGoal (){
                 <b>How much will it cost?</b>
                 <input></input>
                 <b>When do you want to reach your goal?</b>
-                <Calendar showWeekNumbers onChange={onChange} value={date} />
+                <Calendar onChange={onChange} value={value} />
             </div>
-            <Link className="btn btn-primary" to="">ARROW</Link>
+            <Link className="btn btn-primary" to="/setup/categories">ARROW</Link>
         </div>
     );
 }
