@@ -14,10 +14,16 @@ router.get("/", async function (req, res) {
 });
 
 router.post("/", interceptors.requireLogin, async function (req, res) {
-  const budget = models.Budget.build(req.body);
+  const user = req.user;
   try {
-    console.log(budget);
-    await budget.save();
+    let budget = await user.getBudget();
+    if (!budget) {
+      budget = models.Budget.build(req.body);
+      budget.UserId = user.id;
+      await budget.save();
+    } else {
+      await budget.update(req.body);
+    }
     res.status(HttpStatus.CREATED).json(budget);
   } catch (error) {
     res.status(HttpStatus.UNPROCESSABLE_ENTITY).json(error);
