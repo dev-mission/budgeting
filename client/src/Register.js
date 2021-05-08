@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import './shared/style/Register.css';
+
 import { useHistory, Link } from 'react-router-dom';
 import classNames from 'classnames';
 import { StatusCodes } from 'http-status-codes'
@@ -81,7 +83,7 @@ function Register() {
                     <button className="btn btn-primary" type="submit">Submit</button>
                   </div>
                   <div className="mb-3 text-center">
-                    <Link to="/login">Already have an account?</Link>
+                    <Link className="greenBtn" to="/login">Already have an account?</Link>
                   </div>
                 </form>
               </div>
