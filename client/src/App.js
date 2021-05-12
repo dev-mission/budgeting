@@ -10,6 +10,7 @@ import Passwords from "./Passwords";
 import Register from "./Register";
 
 import BudgetForm from "./components/budget/BudgetForm";
+import ExpenseContainer from "./components/expensive/ExpenseContainer";
 
 function App() {
   return (
@@ -33,6 +34,9 @@ function App() {
           )}
           <Route path="/setup-budget">
             <BudgetForm />
+          </Route>
+          <Route path="/expenses">
+            <ExpenseContainer />
           </Route>
         </Switch>
       </Router>
