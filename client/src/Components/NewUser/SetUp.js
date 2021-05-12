@@ -2,7 +2,7 @@ import {Route, Switch, useRouteMatch} from "react-router-dom";
 import NewBudget from './NewBudget';
 import NewCategories from "./NewCategories";
 import NewSavingGoal from './NewSavingGoal';
-import Register from '../../Register';
+// import Register from '../../Register';
 import NewFinish from './NewFinish';
 function SetUp () {
     const {path} = useRouteMatch()
@@ -10,10 +10,6 @@ function SetUp () {
         <Switch>
             <Route exact path={path}>
                 <NewBudget />
-            </Route>
-
-            <Route path={`${path}/register`}>
-                <Register />
             </Route>
 
             <Route path={`${path}/goal`}>

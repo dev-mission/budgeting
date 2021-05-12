@@ -1,8 +1,19 @@
+import React, { useState, useEffect } from "react";
+import Api from "./Api";
+
 function Home() {
+  const [budget, setBudget] = useState([]);
+
+  useEffect(() => {
+    Api.budget.index().then((res) => setBudget(res.data));
+  }, []);
+
   return (
     <main className="container">
-      <h1>Home</h1>
-    </main>    
+      {budget.map((each) => (
+        <p>{each.dollarAmount}</p>
+      ))}
+    </main>
   );
 }
 

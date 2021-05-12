@@ -10,6 +10,8 @@ import Passwords from "./Passwords";
 import Register from "./Register";
 import SetUp from "./Components/NewUser/SetUp";
 
+import BudgetForm from "./Components/new-users/budget/BudgetForm";
+
 function App() {
   return (
     <AuthContextProvider>
@@ -32,6 +34,9 @@ function App() {
           )}
           <Route path="/setup">
             <SetUp />
+          </Route>
+          <Route path="/setup-budget">
+            <BudgetForm />
           </Route>
         </Switch>
       </Router>
