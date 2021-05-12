@@ -1,0 +1,38 @@
+body {
+  padding-top: 0;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+}
+
+nav {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+}
+
+.background-pic {
+  width: 100%;
+  height: 100%;
+}
+
+.logo {
+  display: inline-block;
+}
+
+.register {
+  display: inline-block;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+li {
+  display: inline;
+}

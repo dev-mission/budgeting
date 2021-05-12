@@ -13,9 +13,9 @@ function App() {
   return (
     <AuthContextProvider>
       <Router>
-        <Header />
+        {/* <Header /> */}
         <Switch>
-          <Route exact path="/overview">
+          <Route exact path="/home">
             <Home />
           </Route>
           <Route path="/login">
