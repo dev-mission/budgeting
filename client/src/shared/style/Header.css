@@ -6,8 +6,16 @@
   margin-right: 230px;
 }
 
+@media only screen and (max-width: 480px) {
+  /* This CSS will be applied only to phones and other small devices. */
+}
+
 .navBarPostion {
   display: flex;
+  margin: 0;
+  padding:0;
+  overflow: hidden;
+  width: 100%;
 }
 
 li {
