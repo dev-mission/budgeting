@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Api from "./Api";
-
+import BudgetList from "./components/budget/BudgetList";
 function Home() {
   const [budget, setBudget] = useState([]);
 
@@ -10,9 +10,11 @@ function Home() {
 
   return (
     <main className="container">
-      {budget.map((each) => (
-        <p>{each.dollarAmount}</p>
-      ))}
+      <header>
+        <h2>
+          <BudgetList budget={budget} />
+        </h2>
+      </header>
     </main>
   );
 }
