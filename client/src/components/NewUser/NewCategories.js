@@ -15,7 +15,7 @@ function NewCategories (){
                 <li><b>Step 3 Add Expense Categories</b></li>
             </ul>
             <div>
-                <h1>Add Expensive Categories</h1>
+                <h1>Add Expense Categories</h1>
                 <p>These categories will help you see where you’re spending your money and 
                     will allow you to set specific budgets for specific parts of your life. </p>
             </div>

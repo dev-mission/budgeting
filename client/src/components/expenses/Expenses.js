@@ -2,15 +2,15 @@ import React from "react";
 
 import { Route, Switch, useRouteMatch } from "react-router-dom";
 import ExpenseForm from "./ExpenseForm";
-import ExpenseList from "./ExpenseList";
+import ExpensesList from "./ExpensesList";
 
-function ExpenseContainer() {
+function Expenses() {
   const { path } = useRouteMatch();
 
   return (
     <Switch>
       <Route exact path={path}>
-        <ExpenseList />
+        <ExpensesList />
       </Route>
       <Route path={`${path}/new`}>
         <ExpenseForm />
@@ -22,4 +22,4 @@ function ExpenseContainer() {
   );
 }
 
-export default ExpenseContainer;
+export default Expenses;

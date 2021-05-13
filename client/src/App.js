@@ -11,7 +11,7 @@ import Register from "./Register";
 import SetUp from "./components/NewUser/SetUp";
 
 import BudgetForm from "./components/budget/BudgetForm";
-import ExpenseContainer from "./components/expensive/ExpenseContainer";
+import Expenses from "./components/expenses/Expenses";
 
 function App() {
   return (
@@ -40,7 +40,7 @@ function App() {
             <BudgetForm />
           </Route>
           <Route path="/expenses">
-            <ExpenseContainer />
+            <Expenses />
           </Route>
         </Switch>
       </Router>
