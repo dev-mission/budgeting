@@ -1,26 +1,38 @@
-import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useLocation, useHistory } from "react-router-dom";
 
-import { BulgaLogo } from "./shared/logo/Avatars";
+import { BulgaLogo, BulgoFooter } from "./shared/logo/Avatars";
 import { Link } from "react-router-dom";
 
 import "./shared/style/Home.css";
-import Wallet from "./shared/pics/stephen-phillips-hostreviews-co-uk-em37kS8WJJQ-unsplash 1.png";
 import PigCoin from "./shared/pics/undraw_Savings_re_eq4w (1).png";
 import LadyMoney from "./shared/pics/undraw_investment_data_yfvt.png";
 
 function Home({ setPath }) {
   const location = useLocation();
+  const history = useHistory();
 
   useEffect(() => {
     setPath(location.pathname);
   }, []);
 
+  const handleLoginBtn = () => {
+    history.push("/login");
+  };
+  const handleSignUpBtn = () => {
+    history.push("/register");
+  };
+
   return (
     <div class="homeContainer">
       <main className="topMain">
+        <div className="title">
+          <div className="titleHeading">Welcome to Bulga.</div>
+          <div className="titleSubHeading">
+            Simple budgeting to kickstart your savings
+          </div>
+        </div>
         <header>
-          {/* <img className="background-pic" src={Wallet} alt="wallet" /> */}
           <nav className="navigation">
             <div className="logo col col-md-6">
               <Link to="/home">
@@ -45,10 +57,18 @@ function Home({ setPath }) {
               </li>
             </ul>
             <div className="register col col-md-3">
-              <button id="login" className="btn btn-primary">
+              <button
+                onClick={handleLoginBtn}
+                id="login"
+                className="btn btn-primary"
+              >
                 Login
               </button>
-              <button id="signUp" className="btn btn-primary">
+              <button
+                onClick={handleSignUpBtn}
+                id="signUp"
+                className="btn btn-primary"
+              >
                 Sign up
               </button>
             </div>
@@ -116,6 +136,23 @@ function Home({ setPath }) {
           </div>
         </section>
       </main>
+      <footer className="footerContainer">
+        <div className="footerLogo">
+          <BulgaLogo />
+          <BulgoFooter />
+        </div>
+        <ul className="footerNav">
+          <li>
+            <a>Privacy Policy</a>
+          </li>
+          <li>
+            <a>Terms & Conditions</a>
+          </li>
+          <li>
+            <a>Contact Us</a>
+          </li>
+        </ul>
+      </footer>
     </div>
   );
 }
