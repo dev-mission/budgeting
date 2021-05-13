@@ -10,7 +10,7 @@ import Passwords from "./Passwords";
 import Register from "./Register";
 import SetUp from "./components/NewUser/SetUp";
 
-import BudgetForm from "./Components/new-users/budget/BudgetForm";
+import BudgetForm from "./components/new-users/budget/BudgetForm";
 
 function App() {
   return (
