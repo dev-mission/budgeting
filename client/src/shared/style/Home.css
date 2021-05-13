@@ -2,30 +2,45 @@ body {
   padding-top: 0;
 }
 
-main {
-  width: 100vw;
-  height: 100vh;
+.homeContainer {
+  overflow-x: hidden;
+  font-family: "Inter", sans-serif;
+}
+
+/*
+top layout
+*/
+
+.topMain {
+  background: url("../pics/stephen-phillips-hostreviews-co-uk-em37kS8WJJQ-unsplash\ 1.png")
+    no-repeat center center;
+  background-size: cover;
+  height: 1010px;
+}
+
+header {
+  position: relative;
 }
 
 nav {
-  position: fixed;
-  top: 0px;
+  top: 15px;
   width: 100%;
+  margin-left: 42px;
+  z-index: 5;
+  position: absolute;
 }
 
-.background-pic {
-  width: 100%;
-  height: 100%;
-}
+/*
+   Bulga logo
+*/
 
 .logo {
   display: inline-block;
 }
 
-.register {
-  display: inline-block;
-}
-
+/*
+  navigation ul li
+*/
 ul {
   list-style-type: none;
   margin: 0;
@@ -35,4 +50,119 @@ ul {
 
 li {
   display: inline;
+  margin-left: 1.7rem;
+}
+
+.firstLink {
+  padding-left: 3.33rem !important;
+  text-decoration: underline !important;
+}
+
+.link {
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+/*
+  navigation buttons styles
+*/
+
+button {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+}
+
+.register {
+  display: inline-block;
+  padding-left: 70px;
+}
+
+#login {
+  font-size: 1.2rem;
+  margin-left: 1.3rem;
+  margin-right: 1.5rem;
+  background-color: #fff;
+  color: #20c997;
+  height: 2.2rem;
+  line-height: 1rem;
+}
+
+#signUp {
+  font-size: 1.2rem;
+  background-color: #20c997;
+  color: #fff;
+  line-height: 1rem;
+  height: 2.2rem;
+}
+
+.downIcon {
+  position: absolute;
+  width: 52px;
+  height: 26px;
+  left: 694px;
+  top: 900px;
+  height: 100px;
+  width: 80px;
+  color: whitesmoke;
+}
+
+/*
+bottom part layout
+*/
+
+.bottomMain {
+  width: 80%;
+
+  margin: 0 auto;
+}
+
+.leftPart {
+  height: 400px;
+  width: 500px;
+  line-height: 1.3rem;
+  padding-top: 3rem;
+  padding-left: 2rem;
+}
+
+.rightPart {
+  height: 350px;
+  width: 500px;
+  line-height: 1.3rem;
+  padding-left: 14rem;
+}
+
+/*
+  top layer 
+*/
+
+.topSection {
+  display: flex;
+  align-items: flex-end;
+}
+
+.bulgaDesc {
+  font-size: 14px;
+  color: rgb(196, 186, 186);
+}
+
+.pigPic {
+  padding-bottom: 5rem;
+}
+
+/*
+  bottom layer
+*/
+
+.bottomSection {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row-reverse;
+}
+
+.ladyPic {
+  margin-left: 5rem;
 }
