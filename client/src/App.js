@@ -12,6 +12,7 @@ import SetUp from "./components/NewUser/SetUp";
 
 import BudgetForm from "./components/new-users/budget/BudgetForm";
 import Overview from "./components/existing-user/Overview";
+import CategoryForm from "./components/category/Category";
 
 function App() {
   return (
@@ -41,6 +42,9 @@ function App() {
           </Route>
           <Route path="/setup-budget">
             <BudgetForm />
+          </Route>
+          <Route path="/categories">
+            <Category />
           </Route>
         </Switch>
       </Router>
