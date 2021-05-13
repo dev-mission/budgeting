@@ -8,7 +8,7 @@ module.exports = {
      * Example:
      * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
      */
-    await queryInterface.addConstraint("Budgets", {
+    await queryInterface.addConstraint("Expenses", {
       fields: ["CategoryId"],
       type: "FOREIGN KEY",
       references: {
@@ -27,7 +27,7 @@ module.exports = {
      */
     await queryInterface.removeConstraint(
       "Expenses",
-      "Categories_CategoriesId_Categories_fk"
+      "Expenses_CategoryId_Categories_fk"
     );
   },
 };
