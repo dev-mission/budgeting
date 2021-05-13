@@ -8,7 +8,7 @@ import Home from "./Home";
 import Login from "./Login";
 import Passwords from "./Passwords";
 import Register from "./Register";
-import SetUp from "./Components/NewUser/SetUp";
+import SetUp from "./components/NewUser/SetUp";
 
 import BudgetForm from "./components/budget/BudgetForm";
 import ExpenseContainer from "./components/expensive/ExpenseContainer";
