@@ -11,6 +11,7 @@ import Register from "./Register";
 import SetUp from "./components/NewUser/SetUp";
 
 import BudgetForm from "./components/new-users/budget/BudgetForm";
+import Overview from "./components/existing-user/Overview";
 
 function App() {
   return (
@@ -18,8 +19,11 @@ function App() {
       <Router>
         <Header />
         <Switch>
-          <Route exact path="/overview">
+          <Route exact path="/home">
             <Home />
+          </Route>
+          <Route exact path="/overview">
+            <Overview />
           </Route>
           <Route path="/login">
             <Login />

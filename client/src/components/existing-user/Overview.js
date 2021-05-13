@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Api from "../../Api";
 
-const Overview = () => {
-  const [budgetValue, setBudgetValue] = useState(0);
-  useEffect(() => {
-    Api.budget.index().then((response) => {
-      setBudgetValue(response);
-    });
-  }, [budgetValue]);
+import CategoryForm from "../category/CategoryForm";
 
-  return <div>{budgetValue}</div>;
+const Overview = () => {
+  return;
+  <>
+    <CategoryForm />
+  </>;
 };
 
 export default Overview;
