@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import Api from "../../Api";
 
@@ -8,11 +8,16 @@ function ExpenseForm() {
 
   const [category, setCategory] = useState("shopping");
   const [expenseForm, setExpenseForm] = useState({
-    CategoryId: 0,
     description: "",
     timePurchase: "",
     amount: 0,
   });
+
+  useEffect(function() {
+    if (id) {
+      Api.expenses.get(id).then((response) => setExpenseForm(response.data));
+    }
+  }, [id]);
 
   const handleCategoryChange = (e) => {
     setCategory(e.target.value);
@@ -31,8 +36,8 @@ function ExpenseForm() {
         await Api.expenses.update(id, expenseForm);
       } else {
         await Api.expenses.create(expenseForm);
-        history.push("/expenses");
       }
+      history.push("/expenses");
     } catch (error) {
       console.log(error);
     }
@@ -40,17 +45,6 @@ function ExpenseForm() {
 
   return (
     <form onSubmit={handleFormSubmit}>
-      <label htmlFor="category">Budget Categories</label>
-      <select
-        id="category"
-        name="category"
-        value={category}
-        onChange={handleCategoryChange}
-      >
-        <option value="shopping">shopping</option>
-        <option value="entertainment">entertainment</option>
-        <option value="Eating out">Eating out</option>
-      </select>
       <label htmlFor="amount">Amount Spend</label>
       <input
         id="amount"
