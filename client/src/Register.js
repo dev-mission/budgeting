@@ -5,13 +5,15 @@ import { useHistory, Link } from 'react-router-dom';
 import classNames from 'classnames';
 import { StatusCodes } from 'http-status-codes'
 
+import { useAuthContext } from './AuthContext';
+
 import Api from './Api';
 import UnexpectedError from './UnexpectedError';
 import ValidationError from './ValidationError';
 
 function Register() {
   const history = useHistory();
-
+  const authContext = useAuthContext();
   const [user, setUser] = useState({
     firstName: '',
     lastName: '',
@@ -30,7 +32,8 @@ function Register() {
     event.preventDefault();
     setError(null);
     try {
-      await Api.auth.register(user);
+      const response = await Api.auth.register(user);
+      authContext.setUser(response.data);
       history.push('/setup', { flash: 'Your account has been created!' });
     } catch (error) {
       if (error.response?.status === StatusCodes.UNPROCESSABLE_ENTITY) {
