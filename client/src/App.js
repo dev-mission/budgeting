@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "./App.scss";
@@ -9,10 +10,9 @@ import Login from "./Login";
 import Passwords from "./Passwords";
 import Register from "./Register";
 import SetUp from "./components/NewUser/SetUp";
-
-import BudgetForm from "./components/new-users/budget/BudgetForm";
 import Overview from "./components/Overview";
-import { useState, useEffect } from "react";
+import BudgetForm from "./components/budget/BudgetForm";
+import Expenses from "./components/expenses/Expenses";
 
 function App() {
   const [path, setPath] = useState("");
@@ -48,6 +48,9 @@ function App() {
           </Route>
           <Route path="/setup-budget">
             <BudgetForm />
+          </Route>
+          <Route path="/expenses">
+            <Expenses />
           </Route>
         </Switch>
       </Router>
