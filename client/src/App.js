@@ -8,9 +8,10 @@ import Home from "./Home";
 import Login from "./Login";
 import Passwords from "./Passwords";
 import Register from "./Register";
-import SetUp from "./Components/NewUser/SetUp";
+import SetUp from "./components/NewUser/SetUp";
 
-import BudgetForm from "./Components/new-users/budget/BudgetForm";
+import BudgetForm from "./components/budget/BudgetForm";
+import Expenses from "./components/expenses/Expenses";
 
 function App() {
   return (
@@ -37,6 +38,9 @@ function App() {
           </Route>
           <Route path="/setup-budget">
             <BudgetForm />
+          </Route>
+          <Route path="/expenses">
+            <Expenses />
           </Route>
         </Switch>
       </Router>
