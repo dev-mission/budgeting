@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import Api from "../../Api";
+import "../../shared/style/NewBudget.css";
 function NewBudget() {
     const [date, setDate] = useState(new Date());
     const [user, setUser] = useState({});
@@ -46,12 +46,14 @@ function NewBudget() {
 
     return (
         <div>
-            <ul>
-                <li>Step 0 Create Account</li>
-                <li><b>Step 1 Determine Spending Budget</b></li>
-                <li>Step 2 SetUp Saving Goals</li>
-                <li>Step 3 Add Expense Categories</li>
-            </ul>
+            <div className="setupSteps">
+                <ul>
+                    <li>Step 0 Create Account</li>
+                    <li><b>Step 1 Determine Spending Budget</b></li>
+                    <li>Step 2 SetUp Saving Goals</li>
+                    <li>Step 3 Add Expense Categories</li>
+                </ul>
+            </div>
             <div>
                 <form onSubmit={onSubmit}>
                     <div>

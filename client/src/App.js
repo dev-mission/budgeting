@@ -8,9 +8,9 @@ import Home from "./Home";
 import Login from "./Login";
 import Passwords from "./Passwords";
 import Register from "./Register";
-import SetUp from "./Components/NewUser/SetUp";
+import SetUp from "./components/NewUser/SetUp";
 
-import BudgetForm from "./Components/new-users/budget/BudgetForm";
+import BudgetForm from "./components/new-users/budget/BudgetForm";
 
 function App() {
   return (
