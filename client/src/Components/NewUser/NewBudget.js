@@ -37,7 +37,7 @@ function NewBudget() {
                 await Api.budget.update(id, budget);
             } else {
                 await Api.budget.create(budget);
-                history.push("/overview");
+                history.push("/setup/goal");
             }
         } catch (error) {
             console.log(error);
@@ -60,7 +60,7 @@ function NewBudget() {
                         </label>
                         <p>Knowing how much you can spend each month will allow us to help you budget for each month while helping you reach your savings goals.
                             Don’t worry, we won’t share this information with anyone. </p>
-                        <b>Monthly Spending Budget</b>
+                        <b>Monthly Spending Budget: $</b>
                         <input
                             type="number"
                             id="dollarAmount"
@@ -68,11 +68,10 @@ function NewBudget() {
                             value={budget.dollarAmount}
                             onChange={onChange}
                         />
-                        <button type="submit">Submit</button>
+                        <button className="btn btn-primary" type="submit">Next</button>
                     </div>
                 </form>
             </div>
-            <Link className="btn btn-primary" to="/setup/goal">ARROW</Link>
         </div>
     );
 }
