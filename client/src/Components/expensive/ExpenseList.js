@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Api from "../../Api";
 
 function ExpenseList() {
   const [expenses, setExpenses] = useState([]);
@@ -7,6 +8,17 @@ function ExpenseList() {
   useEffect(() => {
     Api.expenses.index().then((response) => setExpenses(response.data));
   }, []);
+
+  const onDelete = (expense) => {
+    if (window.confirm(`Are you sure you want to delete ${expense.name}?`)) {
+      // delete button from the API
+      Api.expenses.delete(expense.id).then(() => {
+        // We are fukterunf gthe section list, keeping every section that does not match the one we're deleting
+        const newExpenses = expenses.filter((s) => s.id !== expense.id);
+        setExpenses(newExpenses);
+      });
+    }
+  };
 
   return (
     <main className="container">
