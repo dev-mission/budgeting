@@ -119,12 +119,12 @@ button {
 .downIcon {
   position: absolute;
   width: 52px;
-  height: 26px;
-  left: 694px;
   top: 900px;
+  left: 48%;
   height: 100px;
   width: 80px;
   color: white;
+  margin: 0 auto;
 }
 
 /*
@@ -201,11 +201,17 @@ bottom part layout
 }
 
 .footerLogo {
-  padding-left: 120px;
+  padding-left: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.footerSubLogo {
+  margin-top: 20px;
 }
 
 .footerNav {
-  padding-right: 120px;
+  padding-right: 100px;
 }
 
 .footerNav a:hover {

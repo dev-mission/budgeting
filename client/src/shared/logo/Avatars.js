@@ -43,6 +43,7 @@ export const BulgoFooter = () => {
       height="16"
       viewBox="0 0 101 16"
       fill="none"
+      className="footerSubLogo"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
