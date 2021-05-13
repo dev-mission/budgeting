@@ -8,8 +8,9 @@ import Home from "./Home";
 import Login from "./Login";
 import Passwords from "./Passwords";
 import Register from "./Register";
+import SetUp from "./Components/NewUser/SetUp";
 
-import BudgetForm from "./components/budget/BudgetForm";
+import BudgetForm from "./Components/new-users/budget/BudgetForm";
 import ExpenseContainer from "./components/expensive/ExpenseContainer";
 
 function App() {
@@ -32,6 +33,9 @@ function App() {
               <Register />
             </Route>
           )}
+          <Route path="/setup">
+            <SetUp />
+          </Route>
           <Route path="/setup-budget">
             <BudgetForm />
           </Route>
