@@ -1,30 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+
+import { Route, Switch, useRouteMatch } from "react-router-dom";
 import ExpenseForm from "./ExpenseForm";
 
 function ExpenseContainer() {
-  const [category, setCategory] = useState("shopping");
-  const [expenseForm, setExpenseForm] = useState({
-    CategoryId: 0,
-    description: "",
-    timePurchase: "",
-    amount: 0,
-  });
+  const { path } = useRouteMatch();
 
   return (
-    <main>
-      <header>
-        <h1>Expensive</h1>
-        <h2>FLEXIBLE COST</h2>
-      </header>
-      <section>
-        <ExpenseForm
-          category={category}
-          setCategory={setCategory}
-          expenseForm={expenseForm}
-          setExpenseForm={setExpenseForm}
-        />
-      </section>
-    </main>
+    <Switch>
+      <Route exact path={path}>
+        <ExpenseList />
+      </Route>
+      <Route path={`${path}/new`}>
+        <ExpenseForm />
+      </Route>
+      <Route path={`${path}/:id/edit`}>
+        <ExpenseForm />
+      </Route>
+    </Switch>
   );
 }
 

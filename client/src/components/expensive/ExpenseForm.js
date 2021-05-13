@@ -2,9 +2,17 @@ import React from "react";
 import { useParams, useHistory } from "react-router-dom";
 import Api from "../../Api";
 
-function ExpenseForm({ category, expenseForm, setCategory, setExpenseForm }) {
+function ExpenseForm() {
   const history = useHistory();
   const { id } = useParams();
+
+  const [category, setCategory] = useState("shopping");
+  const [expenseForm, setExpenseForm] = useState({
+    CategoryId: 0,
+    description: "",
+    timePurchase: "",
+    amount: 0,
+  });
 
   const handleCategoryChange = (e) => {
     setCategory(e.target.value);
