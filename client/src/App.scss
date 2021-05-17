@@ -1,3 +1,4 @@
+$font-family-base: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 @import '~bootstrap/scss/bootstrap.scss';
 
 body {
@@ -13,4 +14,11 @@ body {
     font-weight: bold;
     text-decoration: underline;
   }
+}
+
+.display-1 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 72px;
+  line-height: 87px;
 }
