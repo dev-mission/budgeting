@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "./App.scss";
 
 import { AuthContextProvider } from "./AuthContext";
 import Header from "./Header";
+import Footer from "./Footer";
 import Home from "./Home";
 import Login from "./Login";
 import Passwords from "./Passwords";
@@ -15,19 +16,13 @@ import BudgetForm from "./components/budget/BudgetForm";
 import Expenses from "./components/expenses/Expenses";
 
 function App() {
-  const [path, setPath] = useState("");
-
-  // useEffect(() => {
-  //   console.log(path);
-  // }, [path]);
-
   return (
     <AuthContextProvider>
       <Router>
-        {path === "/home" ? "" : <Header />}
+        <Header />
         <Switch>
-          <Route exact path="/home">
-            <Home setPath={setPath} />
+          <Route exact path="/">
+            <Home />
           </Route>
           <Route path="/overview">
             <Overview />
@@ -53,6 +48,7 @@ function App() {
             <Expenses />
           </Route>
         </Switch>
+        <Footer />
       </Router>
     </AuthContextProvider>
   );

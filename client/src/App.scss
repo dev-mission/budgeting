@@ -3,3 +3,14 @@
 body {
   padding-top: 5rem;
 }
+
+.nav-link {
+  color: white;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+
+  &.active {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+}
