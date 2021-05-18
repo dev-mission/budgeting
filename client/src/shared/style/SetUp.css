@@ -1,0 +1,44 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    min-height: 100vh;
+}
+.wrapper > div {
+    background:#FFF;
+    padding: 1em;
+}
+.wrapper > div:nth-child(odd) {
+    background: #20C997;
+}
+.wrapper > .steps {
+    display: grid;
+    justify-content: center;
+    align-items: center;   
+}
+.wrapper > .steps > ul {
+    color: #A6E9D5;
+}
+.wrapper > .steps > ul > li {
+    padding: 5vh;
+}
+.wrapper > .form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    padding: 15vh;
+}
+.wrapper label {
+    font-size: xx-large;
+    color: #6C757D;
+}
+.wrapper b {
+    font-size: large;
+}
+.wrapper p {
+    color: #6C757D;
+    font-size: x-small;
+}
+.wrapper input {
+    margin: 10px;
+}
