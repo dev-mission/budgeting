@@ -106,12 +106,22 @@ function Header() {
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="/resource">
+                    <Link
+                      className={classNames("nav-link", {
+                        active: location.pathname === "/resource",
+                      })}
+                      to="/resource"
+                    >
                       Resource
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="/FAQ">
+                    <Link
+                      className={classNames("nav-link", {
+                        active: location.pathname === "/FAQ",
+                      })}
+                      to="/FAQ"
+                    >
                       FAQ
                     </Link>
                   </li>
