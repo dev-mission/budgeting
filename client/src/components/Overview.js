@@ -1,15 +1,20 @@
 import React, { useState, useEffect } from "react";
-import Api from "../../Api";
+import Api from "../Api";
 
-const Overview = () => {
-  const [budgetValue, setBudgetValue] = useState(0);
+function Overview() {
+  const [budget, setBudget] = useState([]);
+
   useEffect(() => {
-    Api.budget.index().then((response) => {
-      setBudgetValue(response);
-    });
-  }, [budgetValue]);
+    Api.budget.index().then((res) => setBudget(res.data));
+  }, []);
 
-  return <div>{budgetValue}</div>;
-};
+  return (
+    <main className="container">
+      {budget.map((each) => (
+        <p>{each.dollarAmount}</p>
+      ))}
+    </main>
+  );
+}
 
 export default Overview;
