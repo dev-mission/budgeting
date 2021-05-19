@@ -16,10 +16,11 @@ router.get("/", async function (req, res) {
 router.post("/", interceptors.requireLogin, async function (req, res) {
   const resource = models.Resource.build(req.body);
   try {
-    await resouce.save();
+    await resource.save();
     res.status(HttpStatus.CREATED).json(resource);
   } catch (error) {
     res.status(HttpStatus.UNPROCESSABLE_ENTITY).json(error);
+    console.log(error);
   }
 });
 
