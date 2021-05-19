@@ -78,6 +78,23 @@ const Api = {
       return instance.delete(`/api/expenses/${id}`); //M
     },
   },
+  categories: {
+    index() {
+      return instance.get("/api/categories");
+    },
+    create(data) {
+      return instance.post("/api/categories", data); //M
+    },
+    get(id) {
+      return instance.get(`/api/categories/${id}`); //M
+    },
+    update(id, data) {
+      return instance.patch(`/api/categories/${id}`, data); //M
+    },
+    delete(id) {
+      return instance.delete(`/api/categories/${id}`); //M
+    },
+  },
 };
 
 export default Api;
