@@ -17,9 +17,9 @@ function NewSavingGoal() {
             </div>
             <div className="form">
                 <div>
-                    <label htmlFor="savingGoal">
+                    <h4>
                         Set Up a Saving Goal
-                    </label>
+                    </h4>
                     <p>Are you saving for a laptop? A vacation? A nice date?
                         You can edit or add more saving goals later. </p>
                     <b>What are you saving up for?</b><br></br>

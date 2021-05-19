@@ -10,25 +10,25 @@
 .wrapper > div:nth-child(odd) {
     background: #20C997;
 }
-.wrapper > .steps {
+.wrapper .steps {
     display: grid;
     justify-content: center;
     align-items: center;   
 }
-.wrapper > .steps > ul {
+.wrapper .steps > ul {
     color: #A6E9D5;
 }
-.wrapper > .steps > ul > li {
+.wrapper .steps > ul > li {
     padding: 5vh;
 }
 .wrapper > .form{
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
     margin: 0px;
     padding: 15vh;
 }
-.wrapper label {
+.wrapper h4 {
     font-size: xx-large;
     color: #6C757D;
 }
@@ -40,5 +40,9 @@
     font-size: x-small;
 }
 .wrapper input {
-    margin: 10px;
+    margin: 8px;
+}
+.newCategory {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }

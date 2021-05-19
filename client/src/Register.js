@@ -45,13 +45,15 @@ function Register() {
   }
 
   return (
-    <div>
-      <ul>
-        <li><b>Step 0 Create Account</b></li>
-        <li>Step 1 Determine Spending Budget</li>
-        <li>Step 2 SetUp Saving Goals</li>
-        <li>Step 3 Add Expense Categories</li>
-      </ul>
+    <div className="wrapper">
+      <div className="steps">
+        <ul>
+          <li><b>Step 0 Create Account</b></li>
+          <li>Step 1 Determine Spending Budget</li>
+          <li>Step 2 SetUp Saving Goals</li>
+          <li>Step 3 Add Expense Categories</li>
+        </ul>
+      </div>
       <main className="container">
         <div className="row justify-content-center">
           <div className="col col-sm-10 col-md-8 col-lg-6 col-xl-4">
