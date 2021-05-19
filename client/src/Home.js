@@ -28,15 +28,14 @@ function Home() {
           <div className=" offset-1 col-md-4">
             <h2>What is Bulga</h2>
             <p>
-              Lorem ipsum dolor sit amet, consec tetur adipiscing elit. Nam
-              condimentum tempus diam, ultricies sollicitudin erat facilisis
-              eget. Vestibulum rhoncus dui vel eros laoreet consectetur. Vivamus
-              eget elementum ligula, vitae pharetra quam. Nullam at ligula sed
-              metu. Lorem ipsum dolor sit amet, consec tetur adipiscing elit.
-              Nam condimentum tempus diam, ultricies sollicitudin erat facilisis
-              eget. Vestibulum rhoncus dui vel eros laoreet consectetur. Vivamus
-              eget elementum ligula, vitae pharetra quam. Nullam at ligula sed
-              metu
+              Bulga is a budget tracking tool that is best suitable for busy
+              young people like yourself. We provide customizable categories for
+              all kinds of expenses that you need. On top of that, we have a
+              saving goal feature that automatically save money for you every
+              month to help achieve whatever goal you have. Bulga brings the
+              ease of budgeting to the palm of young adults by providing
+              intuitive tracking tools to help develop their personal financial
+              health stability.
             </p>
           </div>
           <div className="offset-2 col-md-5">
@@ -52,6 +51,14 @@ function Home() {
       <section className="container home__section">
         <div className="row">
           <div className="offset-1 col-md-4">
+            <img
+              src={LadyMoney}
+              alt="a lady holding some us dollars"
+              width="350px"
+              className="ladyPic"
+            />
+          </div>
+          <div className="offset-2 col-md-4">
             <h2>How do I start a Budget</h2>
             <p>
               Budget is a financial plan for a defined period. Having a budget
@@ -64,14 +71,6 @@ function Home() {
               amazing progress of how much you saved just by following the
               budget plan.
             </p>
-          </div>
-          <div className="offset-2 col-md-5">
-            <img
-              src={LadyMoney}
-              alt="a lady holding some us dollars"
-              width="350px"
-              className="ladyPic"
-            />
           </div>
         </div>
       </section>
