@@ -14,7 +14,7 @@ import SetUp from "./components/NewUser/SetUp";
 import Overview from "./components/Overview";
 import BudgetForm from "./components/budget/BudgetForm";
 import Expenses from "./components/expenses/Expenses";
-import Category from "./components/category/Category";
+import Categories from "./components/category/Categories";
 
 function App() {
   return (
@@ -49,7 +49,7 @@ function App() {
             <Expenses />
           </Route>
           <Route path="/categories">
-            <Category />
+            <Categories />
           </Route>
         </Switch>
         <Footer />

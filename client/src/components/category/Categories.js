@@ -1,23 +1,23 @@
 import React from "react";
 import { Route, Switch, useRouteMatch } from "react-router-dom";
 import CategoryForm from "./CategoryForm";
-import CategoryList from "./CategoryList";
+import CategoriesList from "./CategoriesList";
 
-function Category() {
+function Categories() {
   const { path } = useRouteMatch();
   return (
     <Switch>
       <Route exact path={path}>
-        <CategoryList />
+        <CategoriesList />
       </Route>
       <Route path={`${path}/new`}>
         <CategoryForm />
       </Route>
       <Route path={`${path}/:id/edit`}>
-        <CategoryList />
+        <CategoriesList />
       </Route>
     </Switch>
   );
 }
 
-export default Category;
+export default Categories;
