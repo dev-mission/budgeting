@@ -78,6 +78,23 @@ const Api = {
       return instance.delete(`/api/expenses/${id}`); //M
     },
   },
+  resources: {
+    index() {
+      return instance.get("/api/resources");
+    },
+    create(data) {
+      return instance.post("/api/resources", data); //M
+    },
+    get(id) {
+      return instance.get(`/api/resources/${id}`); //M
+    },
+    update(id, data) {
+      return instance.patch(`/api/resources/${id}`, data); //M
+    },
+    delete(id) {
+      return instance.delete(`/api/resources/${id}`); //M
+    },
+  },
 };
 
 export default Api;
