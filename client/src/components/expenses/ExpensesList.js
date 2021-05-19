@@ -23,6 +23,7 @@ function ExpenseList() {
   return (
     <main className="container">
       <div>Expenses List</div>
+      <Link className="btn btn-primary" to="/expenses/new">New</Link>
       <ul>
         {expenses.map((s) => (
           <li>

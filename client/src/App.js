@@ -11,9 +11,9 @@ import Login from "./Login";
 import Passwords from "./Passwords";
 import Register from "./Register";
 import SetUp from "./Components/NewUser/SetUp";
-import Overview from "./components/Overview";
-import BudgetForm from "./components/budget/BudgetForm";
-import Expenses from "./components/expenses/Expenses";
+import Overview from "./Components/Overview";
+import BudgetForm from "./Components/budget/BudgetForm";
+import Expenses from "./Components/expenses/Expenses";
 
 function App() {
   return (
