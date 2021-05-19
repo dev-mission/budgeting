@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import Api from "../Api";
+import Api from "../../Api";
 import { Link } from "react-router-dom";
 
 function CategoriesList() {
