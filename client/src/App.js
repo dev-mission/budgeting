@@ -1,18 +1,19 @@
+import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "./App.scss";
 
 import { AuthContextProvider } from "./AuthContext";
 import Header from "./Header";
+import Footer from "./Footer";
 import Home from "./Home";
 import Login from "./Login";
 import Passwords from "./Passwords";
 import Register from "./Register";
 import SetUp from "./components/NewUser/SetUp";
-
-import BudgetForm from "./components/new-users/budget/BudgetForm";
-import Overview from "./components/existing-user/Overview";
-import CategoryForm from "./components/category/Category";
+import Overview from "./components/Overview";
+import BudgetForm from "./components/budget/BudgetForm";
+import Expenses from "./components/expenses/Expenses";
 
 function App() {
   return (
@@ -20,10 +21,10 @@ function App() {
       <Router>
         <Header />
         <Switch>
-          <Route exact path="/home">
+          <Route exact path="/">
             <Home />
           </Route>
-          <Route exact path="/overview">
+          <Route path="/overview">
             <Overview />
           </Route>
           <Route path="/login">
@@ -43,10 +44,11 @@ function App() {
           <Route path="/setup-budget">
             <BudgetForm />
           </Route>
-          <Route path="/categories">
-            <Category />
+          <Route path="/expenses">
+            <Expenses />
           </Route>
         </Switch>
+        <Footer />
       </Router>
     </AuthContextProvider>
   );
