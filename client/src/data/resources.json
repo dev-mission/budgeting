@@ -1,0 +1,26 @@
+[
+    {
+        "id": 0,
+        "component" : "checklist",
+        "title": "Filing Taxes",
+        "desc": "This is wider card with support text below as a natural lead-in to additional content; The content "
+    },
+    {
+        "id": 1,
+        "component" : "Graph up",
+        "title": "How to Invest",
+        "desc": "This is wider card with support text below as a natural lead-in to additional content; The content "
+    },
+    {
+        "id": 2,
+        "component": "Credit card",
+        "title": "Credit vs. Debit",
+        "desc": "This is wider card with support text below as a natural lead-in to additional content; The content "
+    },
+    {
+        "id": 3,
+        "component": "Trophy",
+        "title": "Scholarships",
+        "desc": "This is wider card with support text below as a natural lead-in to additional content; The content "
+    }
+]
