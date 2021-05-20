@@ -25,21 +25,20 @@ function Home() {
       </section>
       <section className="container home__section">
         <div className="row">
-          <div className="col-md-4">
+          <div className=" offset-1 col-md-4">
             <h2>What is Bulga</h2>
             <p>
-              Lorem ipsum dolor sit amet, consec tetur adipiscing elit. Nam
-              condimentum tempus diam, ultricies sollicitudin erat facilisis
-              eget. Vestibulum rhoncus dui vel eros laoreet consectetur. Vivamus
-              eget elementum ligula, vitae pharetra quam. Nullam at ligula sed
-              metu. Lorem ipsum dolor sit amet, consec tetur adipiscing elit.
-              Nam condimentum tempus diam, ultricies sollicitudin erat facilisis
-              eget. Vestibulum rhoncus dui vel eros laoreet consectetur. Vivamus
-              eget elementum ligula, vitae pharetra quam. Nullam at ligula sed
-              metu
+              Bulga is a budget tracking tool that is best suitable for busy
+              young people like yourself. We provide customizable categories for
+              all kinds of expenses that you need. On top of that, we have a
+              saving goal feature that automatically save money for you every
+              month to help achieve whatever goal you have. Bulga brings the
+              ease of budgeting to the palm of young adults by providing
+              intuitive tracking tools to help develop their personal financial
+              health stability.
             </p>
           </div>
-          <div className="offset-2 col-md-6">
+          <div className="offset-2 col-md-5">
             <img
               src={PigCoin}
               alt="a man holding a coin to pig"
@@ -51,27 +50,27 @@ function Home() {
       </section>
       <section className="container home__section">
         <div className="row">
-          <div className="col-md-4 order-2">
-            <h2>How do I start a Budget</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consec tetur adipiscing elit. Nam
-              condimentum tempus diam, ultricies sollicitudin erat facilisis
-              eget. Vestibulum rhoncus dui vel eros laoreet consectetur. Vivamus
-              eget elementum ligula, vitae pharetra quam. Nullam at ligula sed
-              metu. Lorem ipsum dolor sit amet, consec tetur adipiscing elit.
-              Nam condimentum tempus diam, ultricies sollicitudin erat facilisis
-              eget. Vestibulum rhoncus dui vel eros laoreet consectetur. Vivamus
-              eget elementum ligula, vitae pharetra quam. Nullam at ligula sed
-              metu
-            </p>
-          </div>
-          <div className="col-md-6 order-1">
+          <div className="offset-1 col-md-4">
             <img
               src={LadyMoney}
               alt="a lady holding some us dollars"
               width="350px"
               className="ladyPic"
             />
+          </div>
+          <div className="offset-2 col-md-4">
+            <h2>How do I start a Budget</h2>
+            <p>
+              Budget is a financial plan for a defined period. Having a budget
+              plan can prevent you from going into debt or overspending and
+              ensure you will always have money for the things you need. First,
+              calculate the amount of money you are willing to spend each month
+              and then spread out to how many categories you feel like you might
+              need. This will create a mindset of don’t want to go over the
+              limit when it comes on daily basis. Overtime, you’ll see the
+              amazing progress of how much you saved just by following the
+              budget plan.
+            </p>
           </div>
         </div>
       </section>
