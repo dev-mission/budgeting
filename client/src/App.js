@@ -16,6 +16,7 @@ import BudgetForm from "./components/budget/BudgetForm";
 import Expenses from "./components/expenses/Expenses";
 import Resources from "./components/resources/ResourcesDemo";
 import Questions from "./components/faq/Questions";
+import Resources from "./components/resources/Resources";
 
 function App() {
   return (
