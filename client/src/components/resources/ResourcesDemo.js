@@ -1,6 +1,6 @@
 import React from "react";
 import resoucesData from "../../data/resources.json";
-import ResourceList from "./ResourceList";
+import ResourceList from "./ResourceDemoList";
 import {
   GraphUp,
   ListCheck,
