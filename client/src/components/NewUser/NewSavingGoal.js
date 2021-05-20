@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Calendar from "react-calendar";
 import "../../shared/style/SetUp.css";
+import { UserArrow } from '../../shared/logo/Avatars';
 function NewSavingGoal() {
     const [value, onChange] = useState(new Date());
 
     return (
-        <div className="wrapper">
+        <div className="setup">
             <div className="steps">
                 <ul>
                     <li>Step 0 Create Account</li>
@@ -28,7 +29,7 @@ function NewSavingGoal() {
                     <input></input><br></br>
                     <b>When do you want to reach your goal?</b>
                     <Calendar onChange={onChange} value={value} />
-                    <Link className="btn btn-primary" to="/setup/categories">ARROW</Link>
+                    <Link className="arrow" to="/setup/categories"><UserArrow /></Link>
                 </div>
             </div>
         </div>

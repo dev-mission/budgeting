@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import Api from "../../Api";
 import "../../shared/style/SetUp.css";
+import {UserArrow} from "../../shared/logo/Avatars";
 function NewBudget() {
     const [date, setDate] = useState(new Date());
     const [user, setUser] = useState({});
@@ -46,7 +47,7 @@ function NewBudget() {
 
     return (
         <div>
-            <div className="wrapper">
+            <div className="setup">
                 <div className="steps">
                     <ul>
                         <li>Step 0 Create Account</li>
@@ -58,7 +59,7 @@ function NewBudget() {
                 <div className="form">
                     <form onSubmit={onSubmit}>
                         <div>
-                            <h1>
+                            <h1 className="budgetAmount">
                                 How much are you willing to spend each month?
                             </h1>
                             <p>Knowing how much you can spend each month will allow us to help you budget for each month while helping you reach your savings goals.
@@ -71,7 +72,7 @@ function NewBudget() {
                                 value={budget.dollarAmount}
                                 onChange={onChange}
                             />
-                            <button className="btn btn-primary" type="submit">Next</button>
+                            <button className="arrow" type="submit"><UserArrow /></button>
                         </div>
                     </form>
                 </div>

@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
+import { UserArrow } from '../../shared/logo/Avatars';
 import "../../shared/style/SetUp.css";
 function NewFinish (){
     return (
-        <div className="wrapper">
+        <div className="setup">
             <div className="steps">
                 <ul>
                     <li>Step 0 Create Account</li>
@@ -12,8 +13,8 @@ function NewFinish (){
                 </ul>
             </div>
             <div className="background">
-                <h2>Great, you’re ready to start budgeting and saving with Bulga!</h2>
-                <Link className="btn btn-primary" to="/overview">ARROW</Link>
+                <h2 className="setupFinish">Great, you’re ready to start budgeting and saving with Bulga!</h2>
+                <Link className="arrow" to="/overview"><UserArrow /></Link>
             </div>
         </div>
     )

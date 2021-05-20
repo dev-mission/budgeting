@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
 import "../../shared/style/SetUp.css";
+import { UserArrow } from '../../shared/logo/Avatars';
 function NewCategories (){
 
     
 
     return (
-        <div className="wrapper">
+        <div className="setup">
             <div className="steps">
                 <ul>
                     <li>Step 0 Create Account</li>
@@ -41,7 +42,7 @@ function NewCategories (){
                                 Loans <input></input>
                         </div>
                     </div>
-                <Link className="btn btn-primary" to="/setup/done">ARROW</Link>
+                <Link to="/setup/done"><UserArrow /></Link>
             </div>
         </div>
     )

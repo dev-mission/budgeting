@@ -1,14 +1,14 @@
-.wrapper {
+.setup {
     display: grid;
     grid-template-columns: 2fr 3fr;
     min-height: 100vh;
     max-height: 1024px;
 }
-.wrapper > div {
+.setup > div {
     background:#FFF;
     padding: 1em;
 }
-.wrapper > div:nth-child(odd) {
+.setup > div:nth-child(odd) {
     background: #20C997;
 }
 .steps {
@@ -31,7 +31,7 @@
     font-family: 'Inter', sans-serif;
     max-width: 827px;
 }
-h1 {
+.budgetAmount {
     font-weight: bold;
     color: #6C757D;
     font-size: 40px;
@@ -39,20 +39,20 @@ h1 {
     letter-spacing: -0.02em;
     font-style: normal;
 }
-.wrapper h4 {
+.setup h4 {
     font-style: normal;
     font-weight: bold;
     font-size: 52px;
     line-height: 63px;
     color: #6C757D;
 }
-.wrapper p {
+.setup p {
     color: #6C757D;
     font-style:normal;
     font-weight:400;
     line-height: 15px;
 }
-.wrapper b {
+.setup b {
     font-size: large;
     font-weight: bold;
 }
@@ -62,7 +62,7 @@ h1 {
     border: #333 1px solid;
     padding: 1em;
 }
-h2 {
+.setupFinish {
     font-family: Inter;
     font-style: normal;
     font-weight: bold;

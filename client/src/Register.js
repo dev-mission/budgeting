@@ -45,7 +45,7 @@ function Register() {
   }
 
   return (
-    <div className="wrapper">
+    <div className="setup">
       <div className="steps">
         <ul>
           <li><b>Step 0 Create Account</b></li>
