@@ -58,9 +58,9 @@ function NewBudget() {
                 <div className="form">
                     <form onSubmit={onSubmit}>
                         <div>
-                            <h4>
+                            <h1>
                                 How much are you willing to spend each month?
-                            </h4>
+                            </h1>
                             <p>Knowing how much you can spend each month will allow us to help you budget for each month while helping you reach your savings goals.
                                 Don’t worry, we won’t share this information with anyone. </p>
                             <b>Monthly Spending Budget: $</b>

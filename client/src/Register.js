@@ -56,10 +56,10 @@ function Register() {
       </div>
       <main className="container">
         <div className="row justify-content-center">
-          <div className="col col-sm-10 col-md-8 col-lg-6 col-xl-4">
+          <div className="col col-sm-10 col-md-8 col-lg-6 col-xl-8">
             <div className="card">
               <div className="card-body">
-                <h2 className="card-title">Register</h2>
+                <h1 className="card-title">Get your budget in shape with Bulga!</h1>
                 <form onSubmit={onSubmit}>
                   {error && error.message && (
                     <div className="alert alert-danger">{error.message}</div>
@@ -85,7 +85,7 @@ function Register() {
                     {error?.errorMessagesHTMLFor?.('password')}
                   </div>
                   <div className="mb-3 d-grid">
-                    <button className="btn btn-primary" type="submit">Submit</button>
+                    <button className="btn btn-primary" type="submit">Create Account</button>
                   </div>
                   <div className="mb-3 text-center">
                     <Link className="greenBtn" to="/login">Already have an account?</Link>
