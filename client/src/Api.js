@@ -93,7 +93,8 @@ const Api = {
     },
     delete(id) {
       return instance.delete(`/api/categories/${id}`); //M
-
+    },
+  },
   resources: {
     index() {
       return instance.get("/api/resources");

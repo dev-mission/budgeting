@@ -53,6 +53,7 @@ function App() {
           </Route>
           <Route path="/categories">
             <Categories />
+          </Route>
           <Route path="/resourcedemo">
             <ResourcesDemo />
           </Route>
