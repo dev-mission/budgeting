@@ -34,7 +34,12 @@ function Header() {
   };
 
   return (
-    <nav className={classNames("navbar navbar-expand-md header", location.pathname === '/' ? 'header--home' : 'fixed-top')}>
+    <nav
+      className={classNames(
+        "navbar navbar-expand-md header",
+        location.pathname === "/" ? "header--home" : "fixed-top"
+      )}
+    >
       <div className="container">
         <Link className="navbar-brand bulgaLogoMargin" to="/">
           <BulgaLogo />
@@ -91,17 +96,32 @@ function Header() {
               {!user && (
                 <>
                   <li className="nav-item">
-                    <Link className={classNames("nav-link", { active: location.pathname === '/'})} to="/">
+                    <Link
+                      className={classNames("nav-link", {
+                        active: location.pathname === "/",
+                      })}
+                      to="/"
+                    >
                       Home
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="/resource">
+                    <Link
+                      className={classNames("nav-link", {
+                        active: location.pathname === "/resourcedemo",
+                      })}
+                      to="/resourcedemo"
+                    >
                       Resource
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="/FAQ">
+                    <Link
+                      className={classNames("nav-link", {
+                        active: location.pathname === "/FAQ",
+                      })}
+                      to="/FAQ"
+                    >
                       FAQ
                     </Link>
                   </li>

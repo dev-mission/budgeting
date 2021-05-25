@@ -15,6 +15,9 @@ import Overview from "./components/Overview";
 import BudgetForm from "./components/budget/BudgetForm";
 import Expenses from "./components/expenses/Expenses";
 import Categories from "./components/category/Categories";
+import ResourcesDemo from "./components/resources/ResourcesDemo";
+import Questions from "./components/faq/Questions";
+import Resources from "./components/resources/Resources";
 
 function App() {
   return (
@@ -50,6 +53,11 @@ function App() {
           </Route>
           <Route path="/categories">
             <Categories />
+          <Route path="/resourcedemo">
+            <ResourcesDemo />
+          </Route>
+          <Route path="/FAQ">
+            <Questions />
           </Route>
         </Switch>
         <Footer />
