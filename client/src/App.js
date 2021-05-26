@@ -28,7 +28,10 @@ function App() {
             <Route path="/register">
               <Register />
             </Route>
-          )}
+            )}
+            <Route path="/questions">
+            <Questions />
+          </Route>
         </Switch>
       </Router>
     </AuthContextProvider>
