@@ -32,6 +32,7 @@ function Register() {
   const onSubmit = async function (event) {
     event.preventDefault();
     setError(null);
+
     try {
       const response = await Api.auth.register(user);
       authContext.setUser(response.data);
