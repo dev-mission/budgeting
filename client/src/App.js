@@ -14,6 +14,7 @@ import SetUp from "./components/NewUser/SetUp";
 import Overview from "./components/Overview";
 import BudgetForm from "./components/budget/BudgetForm";
 import Expenses from "./components/expenses/Expenses";
+import Categories from "./components/category/Categories";
 import ResourcesDemo from "./components/resources/ResourcesDemo";
 import Questions from "./components/faq/Questions";
 import Resources from "./components/resources/Resources";
@@ -49,6 +50,9 @@ function App() {
           </Route>
           <Route path="/expenses">
             <Expenses />
+          </Route>
+          <Route path="/categories">
+            <Categories />
           </Route>
           <Route path="/resourcedemo">
             <ResourcesDemo />
