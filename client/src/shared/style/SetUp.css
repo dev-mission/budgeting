@@ -5,7 +5,6 @@
     max-height: 1024px;
 }
 .setup > div {
-    background:#FFF;
     padding: 1em;
 }
 .setup > div:nth-child(odd) {
@@ -18,7 +17,7 @@
     max-width: 613px;   
 }
 .steps > ul {
-    color: #A6E9D5;
+    color: #FFFFFF;
 }
 .steps > ul > li {
     padding: 5vh;
