@@ -37,7 +37,8 @@ function Header() {
     <nav
       className={classNames(
         "navbar navbar-expand-md header",
-        location.pathname === "/" ? "header--home" : "fixed-top"
+        location.pathname === "/" ? "header--home" : "fixed-top",
+        location.pathname === "/login" ? "half__color" : "fixed-top"
       )}
     >
       <div className="container">
@@ -95,41 +96,66 @@ function Header() {
             <div className="flex-grow-1 d-flex justify-content-end">
               {!user && (
                 <>
-                  <li className="nav-item">
-                    <Link
-                      className={classNames("nav-link", {
-                        active: location.pathname === "/",
-                      })}
-                      to="/"
-                    >
-                      Home
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link
-                      className={classNames("nav-link", {
-                        active: location.pathname === "/resourcedemo",
-                      })}
-                      to="/resourcedemo"
-                    >
-                      Resource
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link
-                      className={classNames("nav-link", {
-                        active: location.pathname === "/FAQ",
-                      })}
-                      to="/FAQ"
-                    >
-                      FAQ
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link className="nav-link" to="/login">
-                      <UserIcon /> Log in
-                    </Link>
-                  </li>
+                  {location.pathname !== "/login" ? (
+                    <>
+                      <li className="nav-item">
+                        <Link
+                          className={classNames("nav-link", {
+                            active: location.pathname === "/",
+                          })}
+                          to="/"
+                        >
+                          Home
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link
+                          className={classNames("nav-link", {
+                            active: location.pathname === "/resourcedemo",
+                          })}
+                          to="/resourcedemo"
+                        >
+                          Resource
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          className={classNames("nav-link", {
+                            active: location.pathname === "/FAQ",
+                          })}
+                          to="/FAQ"
+                        >
+                          FAQ
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link className="nav-link" to="/login">
+                          <UserIcon /> Log in
+                        </Link>
+                      </li>
+                    </>
+                  ) : (
+                    <>
+                      <li>
+                        <Link
+                          className={classNames("nav-link login__link", {
+                            active: location.pathname === "/register",
+                          })}
+                          to="/register"
+                        >
+                          New User?
+                        </Link>
+                      </li>
+                      <li className="nav-item login__link">
+                        <Link
+                          className="nav-link login__signup__btn"
+                          to="/register"
+                        >
+                          <UserIcon /> Sign Up
+                        </Link>
+                      </li>
+                    </>
+                  )}
                 </>
               )}
               {user && (
