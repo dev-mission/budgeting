@@ -1,5 +1,27 @@
-@import '~bootstrap/scss/bootstrap.scss';
+$font-family-base: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+  "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+@import "~bootstrap/scss/bootstrap.scss";
 
 body {
   padding-top: 5rem;
+  min-height: 100vh;
+}
+
+.nav-link {
+  color: white;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+
+  &.active {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+}
+
+.display-1 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 72px;
+  line-height: 87px;
 }

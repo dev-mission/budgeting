@@ -11,11 +11,11 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Budget.belongsTo(models.User);
     }
   };
   Budget.init({
     dollarAmount: DataTypes.DECIMAL,
-    UserId: DataTypes.INTEGER,
     year: DataTypes.INTEGER,
     month: DataTypes.INTEGER
   }, {

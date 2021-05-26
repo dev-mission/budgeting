@@ -1,0 +1,13 @@
+.footer {
+  height: 200px;
+  width: 100vw;
+  background-color: #6c757d;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__nav {
+  text-align: right;
+}
