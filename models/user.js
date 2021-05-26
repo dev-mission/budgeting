@@ -16,7 +16,9 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       User.hasOne(models.Budget);
-      User.hasMany(models.Category);
+      User.hasMany(models.Category, {
+        foreignKey: "UserId",
+      });
     }
 
     static isValidPassword(password) {
