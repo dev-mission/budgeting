@@ -30,9 +30,10 @@ function CategoriesList() {
       <div>Categories List</div>
       <ul>
         {categories.map((c) => (
-          <li>
+          <li key={c.id}>
+            {console.log(c.id)}
             <p>
-              <Link to={`/categories/${c.id}/edit`}>
+              <Link to={`categories/${c.id}/edit`}>
                 {c.categoryName}, {c.limit}, {c.spend}
               </Link>
             </p>
