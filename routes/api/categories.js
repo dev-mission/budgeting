@@ -14,16 +14,12 @@ router.get("/", async function (req, res) {
 });
 
 router.post("/", interceptors.requireLogin, async function (req, res) {
-  const user = req.user;
+  const category = models.Category.build(req.body);
   try {
-    let category = await user.getCategory();
-    category = models.Category.build(req.body);
-    category.UserId = user.id;
     await category.save();
     res.status(HttpStatus.CREATED).json(category);
   } catch (error) {
     res.status(HttpStatus.UNPROCESSABLE_ENTITY).json(error);
-    console.log(error);
   }
 });
 
