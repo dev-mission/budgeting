@@ -1,0 +1,18 @@
+.steps {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    max-width: 613px; 
+    background-color: #20C997;
+}
+.steps > li {
+    color: #FFFF;
+}
+.steps b {
+    font-weight: bold;
+}
+.categoriesForm {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
