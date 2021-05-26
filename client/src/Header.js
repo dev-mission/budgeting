@@ -38,7 +38,11 @@ function Header() {
       className={classNames(
         "navbar navbar-expand-md header",
         location.pathname === "/" ? "header--home" : "fixed-top",
-        location.pathname === "/login" ? "half__color" : "fixed-top"
+        location.pathname === "/login" ||
+          location.pathname === "/register" ||
+          location.pathname === "/setup"
+          ? "half__color"
+          : "fixed-top"
       )}
     >
       <div className="container">

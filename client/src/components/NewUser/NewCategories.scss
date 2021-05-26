@@ -1,18 +1,21 @@
+@import "~bootstrap/scss/_functions.scss";
+@import "~bootstrap/scss/_variables.scss";
+
 .steps {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    max-width: 613px; 
-    background-color: #20C997;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  max-width: 613px;
+  background-color: $teal-400;
 }
 .steps > li {
-    color: #FFFF;
+  color: #ffff;
 }
 .steps b {
-    font-weight: bold;
+  font-weight: bold;
 }
 .categoriesForm {
-    display: grid;
-    justify-content: center;
-    align-items: center;
+  display: grid;
+  justify-content: center;
+  align-items: center;
 }
