@@ -17,13 +17,9 @@ router.post("/", interceptors.requireLogin, async function (req, res) {
   const user = req.user;
   try {
     let category = await user.getCategory();
-    if (!category) {
-      category = models.Category.build(req.body);
-      category.UserId = user.id;
-      await category.save();
-    } else {
-      await category.update(req.body);
-    }
+    category = models.Category.build(req.body);
+    category.UserId = user.id;
+    await category.save();
     res.status(HttpStatus.CREATED).json(category);
   } catch (error) {
     res.status(HttpStatus.UNPROCESSABLE_ENTITY).json(error);

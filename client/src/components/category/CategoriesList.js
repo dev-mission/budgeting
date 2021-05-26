@@ -11,7 +11,11 @@ function CategoriesList() {
   }, []);
 
   const onDelete = (category) => {
-    if (window.confirm(`Are you sure you want to delete ${category.name}?`)) {
+    if (
+      window.confirm(
+        `Are you sure you want to delete ${category.categoryName}?`
+      )
+    ) {
       // delete button from the API
       Api.categories.delete(category.id).then(() => {
         // We are fukterunf gthe section list, keeping every section that does not match the one we're deleting
@@ -34,7 +38,7 @@ function CategoriesList() {
             </p>
             <p>
               <button
-                onClick={() => onDelete(s)}
+                onClick={() => onDelete(c)}
                 type="button"
                 className="btn btn-sm btn-danger"
               >

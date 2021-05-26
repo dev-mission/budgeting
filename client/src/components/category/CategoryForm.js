@@ -20,11 +20,7 @@ function CategoryForm() {
   const onChange = (e) => {
     const { name, value } = e.target;
     const newCategory = { ...category };
-    if (value === "") {
-      newCategory[name] = value;
-    } else {
-      newCategory[name] = parseFloat(value);
-    }
+    newCategory[name] = value;
     setCategory(newCategory);
   };
 

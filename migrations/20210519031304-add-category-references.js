@@ -16,10 +16,6 @@ module.exports = {
         field: "id",
       },
     });
-    await queryInterface.addConstraint("Categories", {
-      fields: ["UserId"],
-      type: "UNIQUE",
-    });
   },
 
   down: async (queryInterface, Sequelize) => {

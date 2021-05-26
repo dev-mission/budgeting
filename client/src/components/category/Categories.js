@@ -13,8 +13,8 @@ function Categories() {
       <Route path={`${path}/new`}>
         <CategoryForm />
       </Route>
-      <Route path={`${path}/:id/edit`}>
-        <CategoriesList />
+      <Route path={`${path}/:id/form`}>
+        <CategoryForm />
       </Route>
     </Switch>
   );
