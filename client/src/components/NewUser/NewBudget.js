@@ -1,7 +1,8 @@
-import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import Api from "../../Api";
+import "../../shared/style/SetUp.css";
+import {UserArrow} from "../../shared/logo/Avatars";
 function NewBudget() {
     const [date, setDate] = useState(new Date());
     const [user, setUser] = useState({});
@@ -46,31 +47,35 @@ function NewBudget() {
 
     return (
         <div>
-            <ul>
-                <li>Step 0 Create Account</li>
-                <li><b>Step 1 Determine Spending Budget</b></li>
-                <li>Step 2 SetUp Saving Goals</li>
-                <li>Step 3 Add Expense Categories</li>
-            </ul>
-            <div>
-                <form onSubmit={onSubmit}>
-                    <div>
-                        <label htmlFor="dollarAmount">
-                            How much are you willing to spend each month?
-                        </label>
-                        <p>Knowing how much you can spend each month will allow us to help you budget for each month while helping you reach your savings goals.
-                            Don’t worry, we won’t share this information with anyone. </p>
-                        <b>Monthly Spending Budget: $</b>
-                        <input
-                            type="number"
-                            id="dollarAmount"
-                            name="dollarAmount"
-                            value={budget.dollarAmount}
-                            onChange={onChange}
-                        />
-                        <button className="btn btn-primary" type="submit">Next</button>
-                    </div>
-                </form>
+            <div className="setup">
+                <div className="steps">
+                    <ul>
+                        <li>Step 0 Create Account</li>
+                        <li><b>Step 1 Determine Spending Budget</b></li>
+                        <li>Step 2 SetUp Saving Goals</li>
+                        <li>Step 3 Add Expense Categories</li>
+                    </ul>
+                </div>
+                <div className="form">
+                    <form onSubmit={onSubmit}>
+                        <div>
+                            <h1 className="budgetAmount">
+                                How much are you willing to spend each month?
+                            </h1>
+                            <p>Knowing how much you can spend each month will allow us to help you budget for each month while helping you reach your savings goals.
+                                Don’t worry, we won’t share this information with anyone. </p>
+                            <b>Monthly Spending Budget: $</b>
+                            <input
+                                type="number"
+                                id="dollarAmount"
+                                name="dollarAmount"
+                                value={budget.dollarAmount}
+                                onChange={onChange}
+                            />
+                            <button className="arrow" type="submit"><UserArrow /></button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     );
