@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Api from "../Api";
-import CategoriesList from "./category/CategoriesList";
 
 function Overview() {
   const [budget, setBudget] = useState([]);
@@ -11,15 +10,9 @@ function Overview() {
 
   return (
     <main className="container">
-      <section>
-        {" "}
-        {budget.map((each) => (
-          <p>{each.dollarAmount}</p>
-        ))}
-      </section>
-      <section>
-        <CategoriesList />
-      </section>
+      {budget.map((each) => (
+        <p>{each.dollarAmount}</p>
+      ))}
     </main>
   );
 }

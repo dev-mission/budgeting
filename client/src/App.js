@@ -18,8 +18,6 @@ import Categories from "./components/category/Categories";
 import ResourcesDemo from "./components/resources/ResourcesDemo";
 import Questions from "./components/faq/Questions";
 import Resources from "./components/resources/Resources";
-import SpendingHistory from "./components/spending-history/SpendingHistory";
-import BudgetAndSaving from "./components/budget-saving-goal/BudgetAndSaving";
 
 function App() {
   return (
@@ -61,12 +59,6 @@ function App() {
           </Route>
           <Route path="/FAQ">
             <Questions />
-          </Route>
-          <Route path="/spending-history">
-            <SpendingHistory />
-          </Route>
-          <Route path="/budget-saving-goals">
-            <BudgetAndSaving />
           </Route>
         </Switch>
         <Footer />

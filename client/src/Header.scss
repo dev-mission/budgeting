@@ -1,9 +1,8 @@
-@import "~bootstrap/scss/_functions.scss";
-@import "~bootstrap/scss/_variables.scss";
+@import '~bootstrap/scss/_functions.scss';
+@import '~bootstrap/scss/_variables.scss';
 
 .header {
-  background-color: #20c997;
-  height: 80px;
+  background-color: $teal-400;
 }
 
 .header--home {
@@ -13,30 +12,4 @@
   left: 0;
   right: 0;
   z-index: 1000;
-}
-
-.half__color {
-  background: linear-gradient(90deg, $teal-400 50%, #fff 50%);
-}
-
-.login__link {
-  color: #68717a;
-  font-size: 16px;
-  padding-right: 8px !important;
-}
-
-.login__signup__btn {
-  color: #fff;
-  background: $teal-400;
-  padding: 10px !important;
-  border-radius: 10px;
-  margin-top: -4px;
-}
-
-.logout__btn {
-  color: #fff;
-  background: $teal-400;
-  padding: 1px !important;
-  border-radius: 10px;
-  margin-top: -4px;
 }

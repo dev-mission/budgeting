@@ -1,0 +1,81 @@
+.setup {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    min-height: 100vh;
+    max-height: 1024px;
+}
+.setup > div {
+    padding: 1em;
+}
+.setup > div:nth-child(odd) {
+    background: #20C997;
+}
+.steps {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    max-width: 613px;   
+}
+.steps > ul {
+    color: #FFFFFF;
+}
+.steps > ul > li {
+    padding: 5vh;
+}
+.form{
+    display: flex;
+    align-items: center;
+    padding: 20vh;
+    margin: 10vh;
+    font-family: 'Inter', sans-serif;
+    max-width: 827px;
+}
+.budgetAmount {
+    font-weight: bold;
+    color: #6C757D;
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: -0.02em;
+    font-style: normal;
+}
+.setup h4 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 52px;
+    line-height: 63px;
+    color: #6C757D;
+}
+.setup p {
+    color: #6C757D;
+    font-style:normal;
+    font-weight:400;
+    line-height: 15px;
+}
+.setup b {
+    font-size: large;
+    font-weight: bold;
+}
+.newCategory > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: #333 1px solid;
+    padding: 1em;
+}
+.setupFinish {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 77px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+}
+.background {
+    background: #20C997 !important;
+    display: flex;
+    align-items: center;
+    max-width: 827px;
+}
