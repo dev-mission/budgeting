@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory, Link } from "react-router-dom";
 import Api from "../../Api";
 import "./SetUp.scss";
 import { UserArrow } from "../../shared/logo/Avatars";
