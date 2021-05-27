@@ -23,6 +23,7 @@ function NewBudget() {
   const onChange = (e) => {
     const { name, value } = e.target;
     const newBudget = { ...budget };
+
     if (value === "") {
       newBudget[name] = value;
     } else {
