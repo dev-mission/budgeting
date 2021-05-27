@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Api from "../../Api";
-import { useHistory, useParams, useLocation } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 
 function CategoryForm() {
   const history = useHistory();
-  const location = useLocation();
   const { id } = useParams();
   const [category, setCategory] = useState({
     categoryName: "",
@@ -33,11 +32,7 @@ function CategoryForm() {
       } else {
         await Api.categories.create(category);
       }
-      if (location.pathname !== "/setup/categories") {
-        history.push("/categories");
-      } else {
-        history.push("/setup/done");
-      }
+      history.push("/categories");
     } catch (error) {
       console.log(error);
     }

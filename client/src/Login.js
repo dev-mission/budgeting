@@ -3,7 +3,6 @@ import { useHistory, Link } from "react-router-dom";
 
 import Api from "./Api";
 import { useAuthContext } from "./AuthContext";
-import "./Login.scss";
 
 function Login() {
   const authContext = useAuthContext();
@@ -31,12 +30,9 @@ function Login() {
   };
 
   return (
-    <main className="container full__container">
+    <main className="container">
       <div className="row justify-content-center">
-        <div className="col col-sm-2 col-md-4 col-lg-6 col-xl-8 welcome__position">
-          Welcome back to Bulga
-        </div>
-        <div className="col col-sm-10 col-md-8 col-lg-6 col-xl-4 card__position">
+        <div className="col col-sm-10 col-md-8 col-lg-6 col-xl-4">
           <div className="card">
             <div className="card-body">
               <h2 className="card-title">Log in</h2>
