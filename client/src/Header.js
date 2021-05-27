@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useHistory, Link, useLocation } from "react-router-dom";
 import classNames from "classnames";
 
@@ -12,6 +12,7 @@ function Header() {
   const history = useHistory();
   const location = useLocation();
   const { user, setUser } = useAuthContext();
+  const [userNav, setUserNav] = useState(false);
 
   useEffect(
     function () {
@@ -25,6 +26,23 @@ function Header() {
     },
     [setUser]
   );
+
+  useEffect(() => {
+    if (user) {
+      if (
+        location.pathname !== "/setup" &&
+        location.pathname !== "/setup/goal" &&
+        location.pathname !== "/setup/categories" &&
+        location.pathname !== "/setup/done"
+      ) {
+        setUserNav(true);
+      } else {
+        setUserNav(false);
+      }
+    } else {
+      setUserNav(false);
+    }
+  }, [location, user]);
 
   const onLogout = async function (event) {
     event.preventDefault();
@@ -40,7 +58,10 @@ function Header() {
         location.pathname === "/" ? "header--home" : "fixed-top",
         location.pathname === "/login" ||
           location.pathname === "/register" ||
-          location.pathname === "/setup"
+          location.pathname === "/setup" ||
+          location.pathname === "/setup/goal" ||
+          location.pathname === "/setup/categories" ||
+          location.pathname === "/setup/done"
           ? "half__color"
           : "fixed-top"
       )}
@@ -65,7 +86,7 @@ function Header() {
           id="navbarsExampleDefault"
         >
           <ul className="navbar-nav flex-grow-1 mb-2 mb-md-0">
-            {user && (
+            {userNav && (
               <>
                 <li className="nav-item">
                   <Link className="nav-link" aria-current="page" to="/overview">
@@ -100,7 +121,8 @@ function Header() {
             <div className="flex-grow-1 d-flex justify-content-end">
               {!user && (
                 <>
-                  {location.pathname !== "/login" ? (
+                  {location.pathname !== "/login" &&
+                  location.pathname !== "/register" ? (
                     <>
                       <li className="nav-item">
                         <Link
@@ -143,19 +165,34 @@ function Header() {
                       <li>
                         <Link
                           className={classNames("nav-link login__link", {
-                            active: location.pathname === "/register",
+                            active:
+                              location.pathname === "/register" &&
+                              location.pathname === "/login",
                           })}
-                          to="/register"
+                          to={
+                            location.pathname === "/register"
+                              ? "/login"
+                              : "/register"
+                          }
                         >
-                          New User?
+                          {location.pathname === "/register"
+                            ? "Already have an account?"
+                            : "New User?"}
                         </Link>
                       </li>
                       <li className="nav-item login__link">
                         <Link
                           className="nav-link login__signup__btn"
-                          to="/register"
+                          to={
+                            location.pathname === "/register"
+                              ? "/login"
+                              : "/register"
+                          }
                         >
-                          <UserIcon /> Sign Up
+                          <UserIcon />
+                          {location.pathname === "/register"
+                            ? "Sign in"
+                            : "Sign Up"}
                         </Link>
                       </li>
                     </>
@@ -163,7 +200,12 @@ function Header() {
                 </>
               )}
               {user && (
-                <li className="nav-item">
+                <li
+                  className={classNames(
+                    "nav-link",
+                    location.pathname === "/" ? "" : "logout__btn"
+                  )}
+                >
                   <a className="nav-link" href="/logout" onClick={onLogout}>
                     <UserIcon /> Log Out
                   </a>

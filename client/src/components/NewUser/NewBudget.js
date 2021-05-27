@@ -3,6 +3,7 @@ import { useParams, useHistory } from "react-router-dom";
 import Api from "../../Api";
 import "./SetUp.scss";
 import { UserArrow } from "../../shared/logo/Avatars";
+
 function NewBudget() {
   const [date, setDate] = useState(new Date());
   const [user, setUser] = useState({});
@@ -59,33 +60,31 @@ function NewBudget() {
               <li>Step 3 Add Expense Categories</li>
             </ul>
           </div>
-          <div className="col col-sm-10 col-md-8 col-lg-6 col-xl-8">
-            <div className="card signup__card">
-              <div className="card-body">
-                <div className="form">
-                  <form onSubmit={onSubmit}>
-                    <h1 className="card-title budgetAmount">
-                      How much are you willing to spend each month?{" "}
-                    </h1>
-                    <p>
-                      Knowing how much you can spend each month will allow us to
-                      help you budget for each month while helping you reach
-                      your savings goals. Don’t worry, we won’t share this
-                      information with anyone.{" "}
-                    </p>
-                    <b>Monthly Spending Budget: $</b>
-                    <input
-                      type="number"
-                      id="dollarAmount"
-                      name="dollarAmount"
-                      value={budget.dollarAmount}
-                      onChange={onChange}
-                    />
-                    <button className="arrow" type="submit">
-                      <UserArrow />
-                    </button>
-                  </form>
-                </div>
+          <div className="col col-sm-10 col-md-4 col-lg-4 col-xl-2">
+            <div className="setup__budget">
+              <div className="signup__form">
+                <form onSubmit={onSubmit}>
+                  <h1 className="card-title budgetAmount">
+                    How much are you willing to spend each month?{" "}
+                  </h1>
+                  <p>
+                    Knowing how much you can spend each month will allow us to
+                    help you budget for each month while helping you reach your
+                    savings goals. Don’t worry, we won’t share this information
+                    with anyone.{" "}
+                  </p>
+                  <b>Monthly Spending Budget: $</b>
+                  <input
+                    type="number"
+                    id="dollarAmount"
+                    name="dollarAmount"
+                    value={budget.dollarAmount}
+                    onChange={onChange}
+                  />
+                  <button className="arrow" type="submit">
+                    <UserArrow />
+                  </button>
+                </form>
               </div>
             </div>
           </div>
