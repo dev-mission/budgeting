@@ -41,8 +41,25 @@ const Api = {
   },
   users: {
     me() {
-      return instance.get("/api/users/me");
-    },
+      return instance.get('/api/users/me');
+    }
+  },
+    questions: {
+      index() {
+        return instance.get("/api/questions");
+      },
+      create(data) {
+        return instance.post("/api/questions", data); 
+      },
+      get(id) {
+        return instance.get(`/api/questions/${id}`); 
+      },
+      update(id, data) {
+        return instance.patch(`/api/rquestions/${id}`, data); 
+      },
+      delete(id) {
+        return instance.delete(`/api/questions/${id}`); 
+      },
   },
   budget: {
     index() {

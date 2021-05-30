@@ -43,7 +43,7 @@ function App() {
             <Route path="/register">
               <Register />
             </Route>
-          )}
+            )}
           <Route path="/setup">
             <SetUp />
           </Route>
@@ -59,7 +59,7 @@ function App() {
           <Route path="/resourcedemo">
             <ResourcesDemo />
           </Route>
-          <Route path="/FAQ">
+          <Route path="/questions">
             <Questions />
           </Route>
           <Route path="/spending-history">
